@@ -1,0 +1,45 @@
+# Compile of ALU.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of Phase_1.vhd was successful.
+# Compile of Phase_1_tb.vhd was successful with warnings.
+# Compile of register_N.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.phase_1_tb
+# vsim work.phase_1_tb 
+# Start time: 08:20:45 on Mar 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.phase_1_tb(testbench)
+# Loading work.phase_1(structural)
+# Loading work.pc(behavioral)
+# Loading altera_mf.altera_mf_components
+# Loading work.memory_1(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.alu(behavioral)
+# WARNING: No extended dataflow license exists
+add wave  \
+sim:/phase_1_tb/clock \
+sim:/phase_1_tb/reset \
+sim:/phase_1_tb/wren \
+sim:/phase_1_tb/data \
+sim:/phase_1_tb/PC_out \
+sim:/phase_1_tb/instr_mem_out \
+sim:/phase_1_tb/alu_out \
+sim:/phase_1_tb/alu_const
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+run
+run
+restart
+run
+# End time: 10:31:49 on Mar 14,2025, Elapsed time: 2:11:04
+# Errors: 0, Warnings: 3

@@ -1,0 +1,209 @@
+# Compile of ALU.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of memory_1_inst.vhd failed with 1 errors.
+# Compile of PC.vhd was successful.
+# Compile of Phase_1.vhd was successful.
+# Compile of Phase_1_tb.vhd failed with 1 errors.
+# Compile of register_N.vhd was successful.
+# 7 compiles, 2 failed with 2 errors.
+# Compile of ALU.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of memory_1_inst.vhd failed with 1 errors.
+# Compile of PC.vhd was successful.
+# Compile of Phase_1.vhd was successful.
+# Compile of Phase_1_tb.vhd was successful with warnings.
+# Compile of register_N.vhd was successful.
+# 7 compiles, 1 failed with 1 error.
+# Compile of ALU.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of Phase_1.vhd was successful.
+# Compile of Phase_1_tb.vhd was successful with warnings.
+# Compile of register_N.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.phase_1_tb
+# vsim -gui work.phase_1_tb 
+# Start time: 06:21:19 on Mar 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.phase_1_tb(testbench)
+# Loading work.phase_1(structural)
+# Loading work.pc(behavioral)
+# Loading altera_mf.altera_mf_components
+# Loading work.memory_1(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.alu(behavioral)
+add wave -position end  sim:/phase_1_tb/clock
+add wave -position end  sim:/phase_1_tb/reset
+add wave -position end  sim:/phase_1_tb/wren
+add wave -position end  sim:/phase_1_tb/data
+add wave -position end  sim:/phase_1_tb/PC_out
+add wave -position end  sim:/phase_1_tb/instr_mem_out
+add wave -position end  sim:/phase_1_tb/alu_out
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# Compile of ALU.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of Phase_1.vhd was successful.
+# Compile of Phase_1_tb.vhd was successful with warnings.
+# Compile of register_N.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.phase_1_tb(testbench)
+# Loading work.phase_1(structural)
+# Loading work.pc(behavioral)
+# Loading work.memory_1(syn)
+# Loading work.alu(behavioral)
+restart
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# Compile of ALU.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of Phase_1.vhd was successful.
+# Compile of Phase_1_tb.vhd was successful with warnings.
+# Compile of register_N.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.phase_1_tb(testbench)
+# Loading work.phase_1(structural)
+# Loading work.pc(behavioral)
+# Loading work.memory_1(syn)
+# Loading work.alu(behavioral)
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Compile of ALU.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of Phase_1.vhd was successful.
+# Compile of Phase_1_tb.vhd was successful with warnings.
+# Compile of register_N.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# Compile of ALU.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of Phase_1.vhd was successful.
+# Compile of Phase_1_tb.vhd was successful with warnings.
+# Compile of register_N.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.phase_1_tb(testbench)
+# Loading work.phase_1(structural)
+# Loading work.pc(behavioral)
+# Loading work.memory_1(syn)
+# Loading work.alu(behavioral)
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# Compile of ALU.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of Phase_1.vhd was successful.
+# Compile of Phase_1_tb.vhd was successful with warnings.
+# Compile of register_N.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.phase_1_tb(testbench)
+# Loading work.phase_1(structural)
+# Loading work.pc(behavioral)
+# Loading work.memory_1(syn)
+# Loading work.alu(behavioral)
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# Compile of ALU.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of Phase_1.vhd was successful.
+# Compile of Phase_1_tb.vhd was successful with warnings.
+# Compile of register_N.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.phase_1_tb(testbench)
+# Loading work.phase_1(structural)
+# Loading work.pc(behavioral)
+# Loading work.memory_1(syn)
+# Loading work.alu(behavioral)
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Compile of ALU.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of Phase_1.vhd was successful.
+# Compile of Phase_1_tb.vhd was successful with warnings.
+# Compile of register_N.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /phase_1_tb/Phase1/alu_inst
+# End time: 07:28:29 on Mar 14,2025, Elapsed time: 1:07:10
+# Errors: 0, Warnings: 4
