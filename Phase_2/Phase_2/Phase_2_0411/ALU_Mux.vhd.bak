@@ -1,0 +1,22 @@
+-- Design Phase 2 
+-- Date: 4/4/2025
+-- Authors: Matthew Collins & Lewis Bates
+-- Emails: mcolins42@tntech.edu & lfbates42@tntech.edu
+
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity ALU_Mux is
+    port (
+        Input0, Input1 : in  std_logic_vector(31 downto 0);  -- Two 32-bit inputs
+        Sel            : in  std_logic;                      -- 1-bit select signal
+        Output         : out std_logic_vector(31 downto 0)   -- 32-bit output
+    );
+end ALU_Mux;
+
+architecture Behavioral of ALU_Mux is
+begin
+    -- Select Input0 when Sel = '0', Input1 when Sel = '1'
+    Output <= Input0 when Sel = '0' else Input1;
+end Behavioral;

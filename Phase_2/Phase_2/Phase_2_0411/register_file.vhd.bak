@@ -1,0 +1,17 @@
+library ieee;
+use library ieee.std_logic_1164.all;
+
+entity register_file is
+	port(
+		read_reg_1: in std_logic_vector(4 downto 0);
+		read_reg_2: in std_logic_vector(4 downto 0);
+		write_reg: in std_logic_vector(4 downto 0);
+		write_data: in std_logic_vector(31 downto 0);
+		regwrite_bit: in std_logic;
+		read_data_1: out std_logic_vector(31 downto 0);
+		read_data_1: out std_logic_vector(31 downto 0));
+	);
+	
+	
+architecture behavior of register_file is
+	

@@ -1,0 +1,52 @@
+-- Design Phase 2 
+-- Date: 4/4/2025
+-- Authors: Matthew Collins & Lewis Bates
+-- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity  ALU is
+    port (
+        A, B     : in  std_logic_vector(31 downto 0);  -- Two 32-bit operands
+        Control  : in  std_logic_vector(3 downto 0);   -- 4-bit ALU operation control
+        Result   : out std_logic_vector(31 downto 0);  -- 32-bit result
+        Zero     : out std_logic                       -- 1-bit zero flag
+    );
+end ALU;
+
+architecture Behavioral of ALU is
+begin
+    process(A, B, Control)
+        variable Result_var : std_logic_vector(31 downto 0);  -- Temporary variable for result
+    begin
+        -- Determine operation based on Control signal
+        case Control is
+            when "0000" =>  -- AND
+                Result_var := A and B;
+            when "0001" =>  -- OR
+                Result_var := A or B;
+            when "0010" =>  -- Add
+                Result_var := std_logic_vector(signed(A) + signed(B));
+            when "0110" =>  -- Subtract
+                Result_var := std_logic_vector(signed(A) - signed(B));
+            when "0111" =>  -- XOR (replacing set-on-less-than)
+                Result_var := A xor B;
+            when "1100" =>  -- NOR
+                Result_var := A nor B;
+            when others =>
+                Result_var := (others => '0');  -- Default to zero for undefined controls
+        end case;
+
+        -- Assign the result to the output port
+        Result <= Result_var;
+
+        -- Set Zero flag if result is all zeros
+        if Result_var = (Result_var'range => '0') then
+            Zero <= '1';
+        else
+            Zero <= '0';
+        end if;
+    end process;
+end Behavioral;

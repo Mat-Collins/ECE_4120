@@ -1,0 +1,66 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+LIBRARY work;
+USE work.type_def.all;
+
+
+ENTITY reg_write_unit IS
+	GENERIC (LEN : INTEGER := 32);
+	PORT(
+		write_en: IN STD_LOGIC;
+		clock: IN STD_LOGIC;
+		write_reg: IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+		write_data: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		reset: IN STD_LOGIC;
+		reg_data: OUT REG_ARRAY(LEN-1 DOWNTO 0));
+END ENTITY;
+
+ARCHITECTURE behavior OF reg_write_unit IS
+
+	-- Component Declarations
+	COMPONENT register_N IS
+		GENERIC (N : INTEGER := 32);
+		PORT (
+			  D       : IN  STD_LOGIC_VECTOR (N-1 DOWNTO 0);
+			  enable  : IN  STD_LOGIC;
+			  Resetn  : IN  STD_LOGIC;
+			  Clock   : IN  STD_LOGIC;
+			  Q       : OUT STD_LOGIC_VECTOR (N-1 DOWNTO 0)
+		 );
+	END COMPONENT;
+
+	-- Internal Signals
+	SIGNAL decoder_out: STD_LOGIC_VECTOR(LEN-1 DOWNTO 0);
+	SIGNAL reg_en: STD_LOGIC;
+	
+	
+BEGIN
+
+	-- Decoder for Write Register
+	decoder: PROCESS(write_reg)
+		BEGIN
+		
+		decoder_out <= (others => '0');
+		decoder_out(to_integer(unsigned(write_reg))) <= '1'; 
+		
+	END PROCESS decoder;
+	
+	
+	-- The list of registers to store the value
+	reg_list: FOR i IN 0 TO LEN-1 GENERATE
+	
+		reg_en <= decoder_out(i) and write_en;
+	
+		registers: register_N	GENERIC MAP (32)
+										PORT MAP (
+											D 			=> write_data,
+											enable 	=> reg_en,
+											Resetn 	=> reset,
+											Clock 	=> clock,
+											Q 			=> reg_data(i)
+										);
+	END GENERATE;
+	
+END ARCHITECTURE;

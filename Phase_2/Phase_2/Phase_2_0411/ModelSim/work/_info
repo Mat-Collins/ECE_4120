@@ -1,0 +1,629 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Ealu
+Z0 w1744424910
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 352
+Z4 dC:/Users/mattj/Documents/VHDL_projects/Phase_2/ModelSim
+Z5 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU.vhd
+Z6 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU.vhd
+l0
+Z7 L10 1
+Vfnl^O3k?FM`<Ti1ejb4il3
+!s100 zc_O;EA5SGDMMPd@U>>BR3
+Z8 OV;C;2020.1;71
+32
+Z9 !s110 1744425617
+!i10b 1
+Z10 !s108 1744425617.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU.vhd|
+Z12 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU.vhd|
+!i113 1
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+DEx4 work 3 alu 0 22 fnl^O3k?FM`<Ti1ejb4il3
+!i122 352
+l20
+L19 34
+Vng3Pa]Th?zVX4@:Q?8m?O2
+!s100 UgH1olUmg]ifAMZPdZadj3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Ealu_mux
+Z15 w1744424905
+R2
+R3
+!i122 353
+R4
+Z16 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU_Mux.vhd
+Z17 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU_Mux.vhd
+l0
+R7
+V78k?FL=l]jz`_UBg@>DQO3
+!s100 RG`agV_nY<]m0JW;Efn9:2
+R8
+32
+R9
+!i10b 1
+R10
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU_Mux.vhd|
+Z19 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU_Mux.vhd|
+!i113 1
+R13
+R14
+Abehavioral
+R2
+R3
+DEx4 work 7 alu_mux 0 22 78k?FL=l]jz`_UBg@>DQO3
+!i122 353
+l19
+L18 5
+VB517dX9<zd6@UJoT:gV940
+!s100 9S3XR[VPGmTWP7Xl10kiH2
+R8
+32
+R9
+!i10b 1
+R10
+R18
+R19
+!i113 1
+R13
+R14
+Edecoder
+Z20 w1744424900
+Z21 DPx4 work 8 type_def 0 22 5QMboEn:S;A5Oj1biLdCP0
+R1
+R2
+R3
+!i122 354
+R4
+Z22 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/decoder.vhd
+Z23 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/decoder.vhd
+l0
+Z24 L14 1
+VL0CT:_6IUO`<43ihd;9DN3
+!s100 hhjMIHS8TjjD1OaAZb45o1
+R8
+32
+R9
+!i10b 1
+R10
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/decoder.vhd|
+Z26 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/decoder.vhd|
+!i113 1
+R13
+R14
+Abehavior
+R21
+R1
+R2
+R3
+DEx4 work 7 decoder 0 22 L0CT:_6IUO`<43ihd;9DN3
+!i122 354
+l22
+L21 20
+VcZL:^@FJA6@V7Ugcl?;SY1
+!s100 WeZAZY0Z>gbP:g0nF?zB03
+R8
+32
+R9
+!i10b 1
+R10
+R25
+R26
+!i113 1
+R13
+R14
+Edecoder_tb
+Z27 w1744322091
+Z28 DPx4 work 8 type_def 0 22 D:90BT;NF99C6Vgee2D9A3
+R2
+R3
+!i122 298
+R4
+Z29 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/decoder_tb.vhd
+Z30 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/decoder_tb.vhd
+l0
+L7 1
+Vg0NLa=5Z9n5n<`0]nfRkD2
+!s100 YUF@[`JoXohn_nO7`dkZQ2
+R8
+32
+Z31 !s110 1744400987
+!i10b 1
+Z32 !s108 1744400987.000000
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/decoder_tb.vhd|
+Z34 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/decoder_tb.vhd|
+!i113 1
+R13
+R14
+Atestbench
+R28
+R2
+R3
+DEx4 work 10 decoder_tb 0 22 g0NLa=5Z9n5n<`0]nfRkD2
+!i122 298
+l22
+L10 40
+Vl9I0o`;N4FMhANaeDWUXa3
+!s100 4Fc@0=^[jno_K>Ph<cf>d2
+R8
+32
+R31
+!i10b 1
+R32
+R33
+R34
+!i113 1
+R13
+R14
+Ememory_1
+Z35 w1743884129
+Z36 DPx9 altera_mf 20 altera_mf_components 0 22 BN6nPmY:UEbXa[^5b@FTW1
+R2
+R3
+!i122 355
+R4
+Z37 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/memory_1.vhd
+Z38 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/memory_1.vhd
+l0
+L43 1
+V6JjH2V:Wc8<7M?J5R[gLT3
+!s100 adhg52DSUBbo0`J]J6YXJ2
+R8
+32
+R9
+!i10b 1
+R10
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/memory_1.vhd|
+Z40 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/memory_1.vhd|
+!i113 1
+R13
+R14
+Asyn
+R36
+R2
+R3
+DEx4 work 8 memory_1 0 22 6JjH2V:Wc8<7M?J5R[gLT3
+!i122 355
+l59
+L55 35
+V@WkU5Dhd43Xjf@dTeYVNb0
+!s100 DPReDmiAA@5eEj^P?[R1i1
+R8
+32
+R9
+!i10b 1
+R10
+R39
+R40
+!i113 1
+R13
+R14
+Epc
+Z41 w1744424891
+R2
+R3
+!i122 356
+R4
+Z42 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/PC.vhd
+Z43 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/PC.vhd
+l0
+R7
+V:X0R9>k;zK6d@ckbLA3?80
+!s100 ;MS56f=jW53kT3C`UN8TW0
+R8
+32
+R9
+!i10b 1
+R10
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/PC.vhd|
+Z45 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/PC.vhd|
+!i113 1
+R13
+R14
+Abehavioral
+R2
+R3
+DEx4 work 2 pc 0 22 :X0R9>k;zK6d@ckbLA3?80
+!i122 356
+l21
+L19 14
+VaHI;nO_m=@l@6aQNjGDNI3
+!s100 @i]0O^z?4MObLT9z96DXn3
+R8
+32
+R9
+!i10b 1
+R10
+R44
+R45
+!i113 1
+R13
+R14
+Epc_adder
+Z46 w1744424986
+Z47 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z48 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R2
+R3
+!i122 357
+R4
+Z49 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/pc_adder.vhd
+Z50 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/pc_adder.vhd
+l0
+R7
+V][BI[MH6d_j;RJ?]nD5FF2
+!s100 kX;=M@`lY6b<LWado:f6c1
+R8
+32
+R9
+!i10b 1
+R10
+Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/pc_adder.vhd|
+Z52 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/pc_adder.vhd|
+!i113 1
+R13
+R14
+Abehavioral
+R47
+R48
+R2
+R3
+DEx4 work 8 pc_adder 0 22 ][BI[MH6d_j;RJ?]nD5FF2
+!i122 357
+l19
+L18 4
+V18b?=3hW;2?cSUW2BP4@o0
+!s100 PWKA>VD]9?dQg]El@Fjo53
+R8
+32
+R9
+!i10b 1
+R10
+R51
+R52
+!i113 1
+R13
+R14
+Ephase_2
+Z53 w1744424981
+R2
+R3
+!i122 358
+R4
+Z54 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/Phase_2.vhd
+Z55 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/Phase_2.vhd
+l0
+R7
+VW5mmYbm8E@88dZezL2PLo0
+!s100 fTFIYHdKWJ=:nH?CT>O2i1
+R8
+32
+R9
+!i10b 1
+R10
+Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/Phase_2.vhd|
+Z57 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/Phase_2.vhd|
+!i113 1
+R13
+R14
+Astructural
+R2
+R3
+DEx4 work 7 phase_2 0 22 W5mmYbm8E@88dZezL2PLo0
+!i122 358
+l119
+L30 175
+V0YDLOBZT>^`k2eCnDSRiI0
+!s100 c@816YfgTSU8Z[85B>A^D2
+R8
+32
+R9
+!i10b 1
+R10
+R56
+R57
+!i113 1
+R13
+R14
+Ephase_2_tb
+Z58 w1744425481
+R2
+R3
+!i122 359
+R4
+Z59 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd
+Z60 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd
+l0
+L9 1
+Vl70G`2_bUD_FEg]oM<GMb2
+!s100 le3d[>emOLOikcNi1zYo`1
+R8
+32
+Z61 !s110 1744425618
+!i10b 1
+R10
+Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd|
+Z63 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd|
+!i113 1
+R13
+R14
+Atestbench
+R2
+R3
+DEx4 work 10 phase_2_tb 0 22 l70G`2_bUD_FEg]oM<GMb2
+!i122 359
+l52
+L12 324
+V6MoQDV`oSS5iHSOh7^Z;n0
+!s100 JGTZY:CDUY`B?4GKkQjKn0
+R8
+32
+R61
+!i10b 1
+R10
+R62
+R63
+!i113 1
+R13
+R14
+Ereg_read_unit
+Z64 w1744424968
+R21
+R1
+R2
+R3
+!i122 360
+R4
+Z65 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_read_unit.vhd
+Z66 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_read_unit.vhd
+l0
+R24
+VEE=9D3?XaBgigRanhnY880
+!s100 h`^^nd>8`Xm=LEN>fV@Nc0
+R8
+32
+R61
+!i10b 1
+Z67 !s108 1744425618.000000
+Z68 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_read_unit.vhd|
+Z69 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_read_unit.vhd|
+!i113 1
+R13
+R14
+Abehavior
+R21
+R1
+R2
+R3
+DEx4 work 13 reg_read_unit 0 22 EE=9D3?XaBgigRanhnY880
+!i122 360
+l27
+L25 21
+Vh:zGo_9L_BO_>]Roaf<6^2
+!s100 4j2MR:JYSSV`cV5[ccU_70
+R8
+32
+R61
+!i10b 1
+R67
+R68
+R69
+!i113 1
+R13
+R14
+Ereg_write_unit
+Z70 w1744424961
+R21
+R2
+R3
+!i122 361
+R4
+Z71 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_write_unit.vhd
+Z72 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_write_unit.vhd
+l0
+L13 1
+Vbfndz7>0NBD_[]ZiDP8j41
+!s100 `dBemhJLZ>@A]EGi;;ULK2
+R8
+32
+R61
+!i10b 1
+R67
+Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_write_unit.vhd|
+Z74 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_write_unit.vhd|
+!i113 1
+R13
+R14
+Abehavior
+R21
+R2
+R3
+DEx4 work 14 reg_write_unit 0 22 bfndz7>0NBD_[]ZiDP8j41
+!i122 361
+l51
+L25 50
+VB]O22Xle57SQ6F3cF6I7n2
+!s100 `V0n34`H0C6_;Ha4gJIJg3
+R8
+32
+R61
+!i10b 1
+R67
+R73
+R74
+!i113 1
+R13
+R14
+Eregister_file
+Z75 w1744424957
+R21
+R2
+R3
+!i122 362
+R4
+Z76 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/register_file.vhd
+Z77 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/register_file.vhd
+l0
+L12 1
+V1DICYB[J[VeKEn`L3H6zR2
+!s100 =n;M`9GKoG95377`=@lVD0
+R8
+32
+R61
+!i10b 1
+R67
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/register_file.vhd|
+Z79 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/register_file.vhd|
+!i113 1
+R13
+R14
+Abehavior
+R21
+R2
+R3
+DEx4 work 13 register_file 0 22 1DICYB[J[VeKEn`L3H6zR2
+!i122 362
+l57
+L27 52
+VY0WK261k5YI5G?_8cZNCH1
+!s100 JW:AG_<CSYE?`BBX4e:5K1
+R8
+32
+R61
+!i10b 1
+R67
+R78
+R79
+!i113 1
+R13
+R14
+Eregister_n
+Z80 w1744424951
+R2
+R3
+!i122 363
+R4
+Z81 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/register_N.vhd
+Z82 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/register_N.vhd
+l0
+R7
+VH2NEL2jOVbB>i`:VZlEl23
+!s100 HW;z<MCZEA?mgIgBh@lhf0
+R8
+32
+R61
+!i10b 1
+R67
+Z83 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/register_N.vhd|
+Z84 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/register_N.vhd|
+!i113 1
+R13
+R14
+Abehavioral
+R2
+R3
+DEx4 work 10 register_n 0 22 H2NEL2jOVbB>i`:VZlEl23
+!i122 363
+l24
+L21 16
+V7V72F<[T@VO9UUam`cHaO0
+!s100 =Ud5V;]3;88SUoEg@7RCa3
+R8
+32
+R61
+!i10b 1
+R67
+R83
+R84
+!i113 1
+R13
+R14
+Esignextend
+Z85 w1744424946
+R2
+R3
+!i122 364
+R4
+Z86 8C:/Users/mattj/Documents/VHDL_projects/Phase_2/SignExtend.vhd
+Z87 FC:/Users/mattj/Documents/VHDL_projects/Phase_2/SignExtend.vhd
+l0
+R7
+VJgSG]>bNV[ND:4[362N]30
+!s100 R`bH009j1@ESkZ:b7E:o20
+R8
+32
+R61
+!i10b 1
+R67
+Z88 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/SignExtend.vhd|
+Z89 !s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/SignExtend.vhd|
+!i113 1
+R13
+R14
+Abehavioral
+R2
+R3
+DEx4 work 10 signextend 0 22 JgSG]>bNV[ND:4[362N]30
+!i122 364
+l18
+L17 5
+V4mZILUBd?zXj_g]ZXGccc1
+!s100 =2FAOFnF0J>_8SW2R5JPP2
+R8
+32
+R61
+!i10b 1
+R67
+R88
+R89
+!i113 1
+R13
+R14
+Ptype_def
+R2
+R3
+!i122 365
+w1744424941
+R4
+8C:/Users/mattj/Documents/VHDL_projects/Phase_2/type_def.vhd
+FC:/Users/mattj/Documents/VHDL_projects/Phase_2/type_def.vhd
+l0
+L9 1
+V5QMboEn:S;A5Oj1biLdCP0
+!s100 5@dXE=X?jC3D[ZE;zT_YU1
+R8
+32
+R61
+!i10b 1
+R67
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/VHDL_projects/Phase_2/type_def.vhd|
+!s107 C:/Users/mattj/Documents/VHDL_projects/Phase_2/type_def.vhd|
+!i113 1
+R13
+R14

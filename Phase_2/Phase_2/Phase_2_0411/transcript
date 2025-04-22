@@ -1,0 +1,74 @@
+vsim de10_lite_top_tb
+# vsim de10_lite_top_tb 
+# Start time: 15:57:24 on Apr 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.de10_lite_top_tb(testbench)
+# Loading work.de10_lite_top(behavioral)
+# Loading work.phase_2(structural)
+# Loading work.pc(behavioral)
+# Loading altera_mf.altera_mf_components
+# Loading work.memory_1(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.pc_adder(behavioral)
+# Loading work.type_def
+# Loading work.register_file(behavior)
+# Loading work.reg_write_unit(behavior)
+# Loading ieee.numeric_std(body)
+# Loading work.decoder(behavior)
+# Loading work.register_n(behavioral)
+# Loading work.reg_read_unit(behavior)
+# Loading work.signextend(behavioral)
+# Loading work.alu_mux(behavioral)
+# Loading work.alu(behavioral)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /de10_lite_top_tb/DUT/dut/registers_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /de10_lite_top_tb/DUT/dut/registers_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /de10_lite_top_tb/DUT/dut/registers_inst/write_unit/dec
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /de10_lite_top_tb/DUT/dut/pc_adder_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /de10_lite_top_tb/DUT/dut/pc_adder_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /de10_lite_top_tb/DUT/dut/registers_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /de10_lite_top_tb/DUT/dut/registers_inst/read_unit
+add wave -position insertpoint  \
+sim:/de10_lite_top_tb/CLOCK_50 \
+sim:/de10_lite_top_tb/KEY \
+sim:/de10_lite_top_tb/SW \
+sim:/de10_lite_top_tb/HEX0 \
+sim:/de10_lite_top_tb/HEX1 \
+sim:/de10_lite_top_tb/HEX2 \
+sim:/de10_lite_top_tb/HEX3 \
+sim:/de10_lite_top_tb/HEX4 \
+sim:/de10_lite_top_tb/HEX5 \
+sim:/de10_lite_top_tb/LEDR \
+sim:/de10_lite_top_tb/CLK_PERIOD
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: lewis  Hostname: BATES_S_I7_HP  ProcessID: 9628
+#           Attempting to use alternate WLF file "./wlftsw9csh".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftsw9csh
+run
+add wave -position insertpoint  \
+sim:/de10_lite_top_tb/CLOCK_50 \
+sim:/de10_lite_top_tb/KEY \
+sim:/de10_lite_top_tb/SW \
+sim:/de10_lite_top_tb/HEX0 \
+sim:/de10_lite_top_tb/HEX1 \
+sim:/de10_lite_top_tb/HEX2 \
+sim:/de10_lite_top_tb/HEX3 \
+sim:/de10_lite_top_tb/HEX4 \
+sim:/de10_lite_top_tb/HEX5 \
+sim:/de10_lite_top_tb/LEDR \
+sim:/de10_lite_top_tb/CLK_PERIOD
+run

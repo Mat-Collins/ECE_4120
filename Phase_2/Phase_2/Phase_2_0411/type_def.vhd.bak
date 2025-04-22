@@ -1,0 +1,3 @@
+
+-- Defines the Array of Registers
+TYPE REG_ARRAY IS ARRAY (natural range <>) OF STD_LOGIC_VECTOR(31 DOWNTO 0); 

@@ -1,0 +1,636 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411/Phase_2_0411
+Ealu
+Z0 w1744424910
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411
+Z5 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/ALU.vhd
+Z6 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/ALU.vhd
+l0
+L10
+Vfnl^O3k?FM`<Ti1ejb4il3
+!s100 zc_O;EA5SGDMMPd@U>>BR3
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1744664055
+!i10b 1
+Z9 !s108 1744664055.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/ALU.vhd|
+Z11 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/ALU.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+DEx4 work 3 alu 0 22 fnl^O3k?FM`<Ti1ejb4il3
+l20
+L19
+Vng3Pa]Th?zVX4@:Q?8m?O2
+!s100 UgH1olUmg]ifAMZPdZadj3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ealu_mux
+Z14 w1744424904
+R2
+R3
+R4
+Z15 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/ALU_Mux.vhd
+Z16 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/ALU_Mux.vhd
+l0
+L10
+V78k?FL=l]jz`_UBg@>DQO3
+!s100 RG`agV_nY<]m0JW;Efn9:2
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/ALU_Mux.vhd|
+Z18 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/ALU_Mux.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+DEx4 work 7 alu_mux 0 22 78k?FL=l]jz`_UBg@>DQO3
+l19
+L18
+VB517dX9<zd6@UJoT:gV940
+!s100 9S3XR[VPGmTWP7Xl10kiH2
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Ede10_lite_top
+Z19 w1744592052
+R2
+R3
+R4
+Z20 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/de10_lite_top.vhd
+Z21 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/de10_lite_top.vhd
+l0
+L10
+V>17I9H9OUnE=]X2GkkG8?2
+!s100 Ecl:TOk<[]GlC=>hB4SGL2
+R7
+32
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/de10_lite_top.vhd|
+Z23 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/de10_lite_top.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+DEx4 work 13 de10_lite_top 0 22 >17I9H9OUnE=]X2GkkG8?2
+l77
+L20
+VBYc5B2oa6k?=zZOjzD:?f2
+!s100 VMBeiZjK2W^Nn=4IG9o?A1
+R7
+32
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13
+Ede10_lite_top_tb
+Z24 w1744569626
+R2
+R3
+R4
+Z25 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/de10_lite_top_tb.vhd
+Z26 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/de10_lite_top_tb.vhd
+l0
+L9
+Vm=Dj<7GSC>l1ojM:iSSI21
+!s100 oG>7[;<O]=5P_Z]CVobgJ0
+R7
+32
+R8
+!i10b 1
+R9
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/de10_lite_top_tb.vhd|
+Z28 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/de10_lite_top_tb.vhd|
+!i113 1
+R12
+R13
+Atestbench
+R2
+R3
+DEx4 work 16 de10_lite_top_tb 0 22 m=Dj<7GSC>l1ojM:iSSI21
+l34
+L12
+Vbh158_WBaM_A6FfIX_9Oc1
+!s100 `g0hHl25o5NNlUCjZkaTG2
+R7
+32
+R8
+!i10b 1
+R9
+R27
+R28
+!i113 1
+R12
+R13
+Edecoder
+Z29 w1744424900
+Z30 DPx4 work 8 type_def 0 22 5QMboEn:S;A5Oj1biLdCP0
+R1
+R2
+R3
+R4
+Z31 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/decoder.vhd
+Z32 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/decoder.vhd
+l0
+L14
+VL0CT:_6IUO`<43ihd;9DN3
+!s100 hhjMIHS8TjjD1OaAZb45o1
+R7
+32
+R8
+!i10b 1
+R9
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/decoder.vhd|
+Z34 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/decoder.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R30
+R1
+R2
+R3
+DEx4 work 7 decoder 0 22 L0CT:_6IUO`<43ihd;9DN3
+l22
+L21
+VcZL:^@FJA6@V7Ugcl?;SY1
+!s100 WeZAZY0Z>gbP:g0nF?zB03
+R7
+32
+R8
+!i10b 1
+R9
+R33
+R34
+!i113 1
+R12
+R13
+Ememory_1
+Z35 w1743884128
+Z36 DPx9 altera_mf 20 altera_mf_components 0 22 @6M>I48X_jBQDo@?W=TN93
+R2
+R3
+R4
+Z37 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/memory_1.vhd
+Z38 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/memory_1.vhd
+l0
+L43
+V6JjH2V:Wc8<7M?J5R[gLT3
+!s100 adhg52DSUBbo0`J]J6YXJ2
+R7
+32
+R8
+!i10b 1
+R9
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/memory_1.vhd|
+Z40 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/memory_1.vhd|
+!i113 1
+R12
+R13
+Asyn
+R36
+R2
+R3
+DEx4 work 8 memory_1 0 22 6JjH2V:Wc8<7M?J5R[gLT3
+l59
+L55
+V@WkU5Dhd43Xjf@dTeYVNb0
+!s100 DPReDmiAA@5eEj^P?[R1i1
+R7
+32
+R8
+!i10b 1
+R9
+R39
+R40
+!i113 1
+R12
+R13
+Epc
+Z41 w1744424890
+R2
+R3
+R4
+Z42 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/PC.vhd
+Z43 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/PC.vhd
+l0
+L10
+V:X0R9>k;zK6d@ckbLA3?80
+!s100 ;MS56f=jW53kT3C`UN8TW0
+R7
+32
+Z44 !s110 1744664056
+!i10b 1
+Z45 !s108 1744664056.000000
+Z46 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/PC.vhd|
+Z47 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/PC.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+DEx4 work 2 pc 0 22 :X0R9>k;zK6d@ckbLA3?80
+l21
+L19
+VaHI;nO_m=@l@6aQNjGDNI3
+!s100 @i]0O^z?4MObLT9z96DXn3
+R7
+32
+R44
+!i10b 1
+R45
+R46
+R47
+!i113 1
+R12
+R13
+Epc_adder
+Z48 w1744424986
+Z49 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z50 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R2
+R3
+R4
+Z51 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/pc_adder.vhd
+Z52 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/pc_adder.vhd
+l0
+L10
+V][BI[MH6d_j;RJ?]nD5FF2
+!s100 kX;=M@`lY6b<LWado:f6c1
+R7
+32
+R44
+!i10b 1
+R45
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/pc_adder.vhd|
+Z54 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/pc_adder.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R49
+R50
+R2
+R3
+DEx4 work 8 pc_adder 0 22 ][BI[MH6d_j;RJ?]nD5FF2
+l19
+L18
+V18b?=3hW;2?cSUW2BP4@o0
+!s100 PWKA>VD]9?dQg]El@Fjo53
+R7
+32
+R44
+!i10b 1
+R45
+R53
+R54
+!i113 1
+R12
+R13
+Ephase_2
+Z55 w1744424980
+R2
+R3
+R4
+Z56 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/Phase_2.vhd
+Z57 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/Phase_2.vhd
+l0
+L10
+VW5mmYbm8E@88dZezL2PLo0
+!s100 fTFIYHdKWJ=:nH?CT>O2i1
+R7
+32
+R44
+!i10b 1
+R45
+Z58 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/Phase_2.vhd|
+Z59 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/Phase_2.vhd|
+!i113 1
+R12
+R13
+Astructural
+R2
+R3
+DEx4 work 7 phase_2 0 22 W5mmYbm8E@88dZezL2PLo0
+l119
+L30
+V0YDLOBZT>^`k2eCnDSRiI0
+!s100 c@816YfgTSU8Z[85B>A^D2
+R7
+32
+R44
+!i10b 1
+R45
+R58
+R59
+!i113 1
+R12
+R13
+Ephase_2_tb
+Z60 w1744425480
+R2
+R3
+R4
+Z61 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/phase_2_tb.vhd
+Z62 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/phase_2_tb.vhd
+l0
+L9
+Vl70G`2_bUD_FEg]oM<GMb2
+!s100 le3d[>emOLOikcNi1zYo`1
+R7
+32
+R44
+!i10b 1
+R45
+Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/phase_2_tb.vhd|
+Z64 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/phase_2_tb.vhd|
+!i113 1
+R12
+R13
+Atestbench
+R2
+R3
+DEx4 work 10 phase_2_tb 0 22 l70G`2_bUD_FEg]oM<GMb2
+l52
+L12
+V6MoQDV`oSS5iHSOh7^Z;n0
+!s100 JGTZY:CDUY`B?4GKkQjKn0
+R7
+32
+R44
+!i10b 1
+R45
+R63
+R64
+!i113 1
+R12
+R13
+Ereg_read_unit
+Z65 w1744424968
+R30
+R1
+R2
+R3
+R4
+Z66 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/reg_read_unit.vhd
+Z67 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/reg_read_unit.vhd
+l0
+L14
+VEE=9D3?XaBgigRanhnY880
+!s100 h`^^nd>8`Xm=LEN>fV@Nc0
+R7
+32
+R44
+!i10b 1
+R45
+Z68 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/reg_read_unit.vhd|
+Z69 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/reg_read_unit.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R30
+R1
+R2
+R3
+DEx4 work 13 reg_read_unit 0 22 EE=9D3?XaBgigRanhnY880
+l27
+L25
+Vh:zGo_9L_BO_>]Roaf<6^2
+!s100 4j2MR:JYSSV`cV5[ccU_70
+R7
+32
+R44
+!i10b 1
+R45
+R68
+R69
+!i113 1
+R12
+R13
+Ereg_write_unit
+Z70 w1744424960
+R30
+R2
+R3
+R4
+Z71 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/reg_write_unit.vhd
+Z72 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/reg_write_unit.vhd
+l0
+L13
+Vbfndz7>0NBD_[]ZiDP8j41
+!s100 `dBemhJLZ>@A]EGi;;ULK2
+R7
+32
+R44
+!i10b 1
+R45
+Z73 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/reg_write_unit.vhd|
+Z74 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/reg_write_unit.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R30
+R2
+R3
+DEx4 work 14 reg_write_unit 0 22 bfndz7>0NBD_[]ZiDP8j41
+l51
+L25
+VB]O22Xle57SQ6F3cF6I7n2
+!s100 `V0n34`H0C6_;Ha4gJIJg3
+R7
+32
+R44
+!i10b 1
+R45
+R73
+R74
+!i113 1
+R12
+R13
+Eregister_file
+Z75 w1744424956
+R30
+R2
+R3
+R4
+Z76 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/register_file.vhd
+Z77 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/register_file.vhd
+l0
+L12
+V1DICYB[J[VeKEn`L3H6zR2
+!s100 =n;M`9GKoG95377`=@lVD0
+R7
+32
+R44
+!i10b 1
+R45
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/register_file.vhd|
+Z79 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/register_file.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R30
+R2
+R3
+DEx4 work 13 register_file 0 22 1DICYB[J[VeKEn`L3H6zR2
+l57
+L27
+VY0WK261k5YI5G?_8cZNCH1
+!s100 JW:AG_<CSYE?`BBX4e:5K1
+R7
+32
+R44
+!i10b 1
+R45
+R78
+R79
+!i113 1
+R12
+R13
+Eregister_n
+Z80 w1744424950
+R2
+R3
+R4
+Z81 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/register_N.vhd
+Z82 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/register_N.vhd
+l0
+L10
+VH2NEL2jOVbB>i`:VZlEl23
+!s100 HW;z<MCZEA?mgIgBh@lhf0
+R7
+32
+R44
+!i10b 1
+R45
+Z83 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/register_N.vhd|
+Z84 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/register_N.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+DEx4 work 10 register_n 0 22 H2NEL2jOVbB>i`:VZlEl23
+l24
+L21
+V7V72F<[T@VO9UUam`cHaO0
+!s100 =Ud5V;]3;88SUoEg@7RCa3
+R7
+32
+R44
+!i10b 1
+R45
+R83
+R84
+!i113 1
+R12
+R13
+Esignextend
+Z85 w1744424946
+R2
+R3
+R4
+Z86 8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/SignExtend.vhd
+Z87 FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/SignExtend.vhd
+l0
+L10
+VJgSG]>bNV[ND:4[362N]30
+!s100 R`bH009j1@ESkZ:b7E:o20
+R7
+32
+R44
+!i10b 1
+R45
+Z88 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/SignExtend.vhd|
+Z89 !s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/SignExtend.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+Z90 DEx4 work 10 signextend 0 22 JgSG]>bNV[ND:4[362N]30
+l18
+L17
+Z91 V4mZILUBd?zXj_g]ZXGccc1
+Z92 !s100 =2FAOFnF0J>_8SW2R5JPP2
+R7
+32
+R44
+!i10b 1
+R45
+R88
+R89
+!i113 1
+R12
+R13
+Ptype_def
+R2
+R3
+w1744424940
+R4
+8F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/type_def.vhd
+FF:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/type_def.vhd
+l0
+L9
+V5QMboEn:S;A5Oj1biLdCP0
+!s100 5@dXE=X?jC3D[ZE;zT_YU1
+R7
+32
+R8
+!i10b 1
+R9
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/type_def.vhd|
+!s107 F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/From_Matthew/Phase_2_0411_new/Phase_2_0411/type_def.vhd|
+!i113 1
+R12
+R13

@@ -1,0 +1,33 @@
+-- Design Phase 2
+-- Date: 4/5/2025
+-- Authors: Matthew Collins & Lewis Bates
+-- Emails: mcolins42@tntech.edu & lfbates42@tntech.edu
+
+LIBRARY ieee;
+USE ieee.STD_LOGIC_1164.all;
+
+ENTITY phase_2_tb IS
+END ENTITY;
+
+ARCHITECTURE testbench OF phase_2_tb IS
+
+	-- Component Declarations
+	COMPONENT phase_2 IS
+		PORT (
+        clock         		: IN  STD_LOGIC;
+        reset         		: IN  STD_LOGIC;
+        instr_wren         : IN  STD_LOGIC;
+        instr_input        : IN  STD_LOGIC_VECTOR(31 downto 0);
+		  regwrite				: IN 	STD_LOGIC;
+		  alu_src				: IN  STD_LOGIC;
+		  alu_op					: IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
+		  read_reg_1			: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);  -- Read Data 1
+		  read_reg_2			: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);  -- Read Data 2
+		  alu_out				: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);  -- Output of the ALU
+		  alu_zero				: OUT STD_LOGIC;							  -- Zero output of ALU
+        instr_mem_out 		: OUT STD_LOGIC_VECTOR(31 DOWNTO 0)   -- Instruction Memory output
+		);
+	END COMPONENT;
+
+	-- Signals to test entity
+	

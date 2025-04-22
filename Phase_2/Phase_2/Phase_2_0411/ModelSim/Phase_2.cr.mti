@@ -1,0 +1,185 @@
+C:/Users/mattj/Documents/VHDL_projects/Phase_2/decoder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/decoder.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package type_def
+-- Compiling entity decoder
+-- Compiling architecture behavior of decoder
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/type_def.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/type_def.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package type_def
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_read_unit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_read_unit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package type_def
+-- Compiling entity reg_read_unit
+-- Compiling architecture behavior of reg_read_unit
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/SignExtend.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/SignExtend.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity SignExtend
+-- Compiling architecture Behavioral of SignExtend
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/memory_1.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/memory_1.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package altera_mf_components
+-- Compiling entity memory_1
+-- Compiling architecture SYN of memory_1
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/register_N.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/register_N.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity register_N
+-- Compiling architecture behavioral of register_N
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/Phase_2.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/Phase_2.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Phase_2
+-- Compiling architecture structural of Phase_2
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/pc_adder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/pc_adder.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity pc_adder
+-- Compiling architecture behavioral of pc_adder
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ALU
+-- Compiling architecture Behavioral of ALU
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/PC.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/PC.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity PC
+-- Compiling architecture behavioral of PC
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/register_file.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/register_file.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package type_def
+-- Compiling entity register_file
+-- Compiling architecture behavior of register_file
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity phase_2_tb
+-- Compiling architecture testbench of phase_2_tb
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(83): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(87): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(89): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(98): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(100): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(105): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(107): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(113): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(115): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(122): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(124): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(131): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(133): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(140): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(142): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(148): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(150): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(157): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(159): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(164): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(166): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(171): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(173): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(178): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(180): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(185): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(187): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(192): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(194): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(197): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(199): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(211): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(213): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(217): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(219): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(222): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(224): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(232): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(234): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(239): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(241): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(247): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(249): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(256): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(258): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(265): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(267): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(274): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(276): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(282): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(284): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(291): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(293): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(298): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(300): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(305): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(307): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(312): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(314): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(319): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(321): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(327): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/VHDL_projects/Phase_2/phase_2_tb.vhd(329): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_write_unit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/reg_write_unit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package type_def
+-- Compiling entity reg_write_unit
+-- Compiling architecture behavior of reg_write_unit
+
+} {} {}} C:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU_Mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/VHDL_projects/Phase_2/ALU_Mux.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ALU_Mux
+-- Compiling architecture Behavioral of ALU_Mux
+
+} {} {}}

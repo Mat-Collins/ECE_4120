@@ -1,0 +1,146 @@
+-- de10_lite_top.vhd
+-- Top-level entity for DE10-Lite board integration
+-- Date: [Insert Date]
+-- Authors: Matthew Collins & Lewis Bates
+-- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity de10_lite_top is
+    port (
+        -- Clock
+        CLOCK_50 : in  std_logic;                     -- 50 MHz clock
+        -- Reset
+        KEY      : in  std_logic_vector(1 downto 0);  -- Key[0] as reset (active low)
+        -- Switches for instruction selection
+        SW       : in  std_logic_vector(9 downto 0);  -- 10 switches for instruction selection
+        -- 7-Segment Displays
+        HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0);  -- 6x 7-segment displays
+        -- LEDs (optional for debugging)
+        LEDR     : out std_logic_vector(9 downto 0)
+    );
+end de10_lite_top;
+
+architecture Behavioral of de10_lite_top is
+    -- Component declaration for Phase_2
+    component Phase_2
+        port (
+            clock    : in  std_logic;
+            reset    : in  std_logic;
+            write    : in  std_logic;
+            instr    : in  std_logic_vector(31 downto 0);
+            regwr    : in  std_logic;
+            alu_op   : in  std_logic_vector(3 downto 0);
+            read_reg1: out std_logic_vector(31 downto 0);
+            read_reg2: out std_logic_vector(31 downto 0);
+            write_reg: in  std_logic_vector(4 downto 0);
+            write_data : in  std_logic_vector(31 downto 0);
+            alu_out  : out std_logic_vector(31 downto 0);
+            zero     : out std_logic
+        );
+    end component;
+
+    -- Signals
+    signal clk          : std_logic;
+    signal reset_n      : std_logic;
+    signal instr        : std_logic_vector(31 downto 0);
+    signal regwr        : std_logic;
+    signal alu_op       : std_logic_vector(3 downto 0);
+    signal read1        : std_logic_vector(31 downto 0);
+    signal read2        : std_logic_vector(31 downto 0);
+    signal write_reg    : std_logic_vector(4 downto 0);
+    signal write_data   : std_logic_vector(31 downto 0);
+    signal alu_result   : std_logic_vector(31 downto 0);
+    signal zero_flag    : std_logic;
+
+    -- 7-Segment decoder function
+    function hex_to_7seg (hex : std_logic_vector(3 downto 0)) return std_logic_vector is
+    begin
+        case hex is
+            when "0000" => return "1000000"; -- 0
+            when "0001" => return "1111001"; -- 1
+            when "0010" => return "0100100"; -- 2
+            when "0011" => return "0110000"; -- 3
+            when "0100" => return "0011001"; -- 4
+            when "0101" => return "0010010"; -- 5
+            when "0110" => return "0000010"; -- 6
+            when "0111" => return "1111000"; -- 7
+            when "1000" => return "0000000"; -- 8
+            when "1001" => return "0010000"; -- 9
+            when "1010" => return "0001000"; -- A
+            when "1011" => return "0000011"; -- b
+            when "1100" => return "1000110"; -- C
+            when "1101" => return "0100001"; -- d
+            when "1110" => return "0000110"; -- E
+            when "1111" => return "0001110"; -- F
+            when others => return "1111111"; -- Default (all off)
+        end case;
+    end function;
+
+begin
+    -- Clock and Reset
+    clk <= CLOCK_50;
+    reset_n <= KEY(0); -- Active low reset
+
+    -- Instruction Selection using Switches
+    -- SW[9:5] for write_reg, SW[4:0] for instr selection
+    write_reg <= SW(9 downto 5);
+    process (SW(4 downto 0))
+    begin
+        case SW(4 downto 0) is
+            when "00000" => instr <= "00000000000000000000000000000000"; -- NOP
+            when "00001" => instr <= "00000001000001001000110000100000"; -- add $t3, $t0, $t1
+            when "00010" => instr <= "00000010000100011001000000100010"; -- sub $t4, $s0, $s1
+            when "00011" => instr <= "00000001011001001010100000100100"; -- and $t5, $t3, $t4
+            when "00100" => instr <= "00000010011101000000010000100110"; -- xor $t0, $s3, $s4
+            when "00101" => instr <= "00000001010101010101000000100111"; -- nor $t0, $t2, $t2 (for NOT)
+            when "00110" => instr <= "00100010011101001000000000000100"; -- addi $s3, $s3, 4
+            when others  => instr <= "00000000000000000000000000000000"; -- Default NOP
+        end case;
+    end process;
+
+    -- Control Signals
+    regwr <= '1' when SW(4 downto 0) /= "00000" else '0'; -- Enable write for non-NOP
+    alu_op <= "0010" when SW(4 downto 0) = "00001" else -- Add
+              "0110" when SW(4 downto 0) = "00010" else -- Subtract
+              "0000" when SW(4 downto 0) = "00011" else -- AND
+              "0111" when SW(4 downto 0) = "00100" else -- XOR
+              "1100" when SW(4 downto 0) = "00101" else -- NOR
+              "0010" when SW(4 downto 0) = "00110" else -- Add (for addi)
+              "0000"; -- Default
+
+    -- Write Data (simplified for demo)
+    write_data <= "00000000000000000000000000000100" when SW(4 downto 0) = "00110" else -- 4 for addi
+                  "00000000000000000000000000000000";
+
+    -- Instantiate Phase_2
+    dut: Phase_2
+        port map (
+            clock    => clk,
+            reset    => reset_n,
+            write    => regwr,
+            instr    => instr,
+            regwr    => regwr,
+            alu_op   => alu_op,
+            read_reg1=> read1,
+            read_reg2=> read2,
+            write_reg=> write_reg,
+            write_data => write_data,
+            alu_out  => alu_result,
+            zero     => zero_flag
+        );
+
+    -- 7-Segment Display Mapping
+    -- Display low 8 bits of read_reg1, read_reg2, and alu_result
+    HEX0 <= hex_to_7seg(read1(3 downto 0));    -- Least significant digit of read_reg1
+    HEX1 <= hex_to_7seg(read1(7 downto 4));
+    HEX2 <= hex_to_7seg(read2(3 downto 0));    -- Least significant digit of read_reg2
+    HEX3 <= hex_to_7seg(read2(7 downto 4));
+    HEX4 <= hex_to_7seg(alu_result(3 downto 0)); -- Least significant digit of alu_result
+    HEX5 <= hex_to_7seg(alu_result(7 downto 4));
+
+    -- LEDs for debugging
+    LEDR <= SW; -- Mirror switches to LEDs
+
+end Behavioral;
