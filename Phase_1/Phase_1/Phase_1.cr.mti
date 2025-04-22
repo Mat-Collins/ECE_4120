@@ -1,0 +1,78 @@
+F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/register_N.vhd {1 {vcom -work work -2002 -explicit -stats=none F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/register_N.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity register_N
+-- Compiling architecture behavioral of register_N
+
+} {} {}} F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity phase_1_tb
+-- Compiling architecture testbench of phase_1_tb
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(62): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(64): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(70): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(72): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(78): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(80): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(86): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(88): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(94): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(96): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(99): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(101): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(107): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(109): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(113): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(115): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(119): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(121): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(125): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(127): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(131): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(133): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(137): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(139): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(142): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1_tb.vhd(144): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/ALU.vhd {1 {vcom -work work -2002 -explicit -stats=none F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/ALU.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity alu
+-- Compiling architecture behavioral of alu
+
+} {} {}} F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/PC.vhd {1 {vcom -work work -2002 -explicit -stats=none F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/PC.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity PC
+-- Compiling architecture behavioral of PC
+
+} {} {}} F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1.vhd {1 {vcom -work work -2002 -explicit -stats=none F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/Phase_1.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Phase_1
+-- Compiling architecture structural of Phase_1
+
+} {} {}} F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/memory_1.vhd {1 {vcom -work work -2002 -explicit -stats=none F:/Tennesse_Tech_Course_Materials/ECE_4120_Fundamentals_Computer_Design/Projects/Phase_1/memory_1.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package altera_mf_components
+-- Compiling entity memory_1
+-- Compiling architecture SYN of memory_1
+
+} {} {}}

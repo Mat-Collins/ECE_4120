@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity phase_1_ testbench is
+end entity phase_1_testbench;
+
+architecture testbench of phase_1_testbench is
+
+component Phase_1 is
+	PORT (
+        clock : IN  STD_LOGIC;
+        reset : IN  STD_LOGIC;
+		  wren  : IN  STD_LOGIC;
+		  data  : IN  STD_LOGIC_VECTOR(32 downto 0);
+        -- For simulation: expose internal signals
+        PC_out        : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);  -- PC output
+        instr_mem_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);  -- Instruction Memory output
+        alu_out       : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)   -- ALU output
+    );
+end component;
+
