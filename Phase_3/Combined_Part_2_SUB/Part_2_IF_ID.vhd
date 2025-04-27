@@ -230,8 +230,6 @@ begin
         ALUOp    => alu_op                           -- ALU operation control
     );
 
-    -- Select destination register (rt or rd) based on RegDst
-    write_register_selected <= IF_ID_instruction(20 downto 16) when reg_dst = '0' else IF_ID_instruction(15 downto 11);
 
     -- Instantiate the register file for reading rs and rt, and writing data
     register_file_inst : register_file port map(
