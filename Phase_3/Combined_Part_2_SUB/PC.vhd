@@ -1,0 +1,32 @@
+-- Design Phase 1 
+-- Date: 3/14/2025
+-- Authors: Matthew Collins & Lewis Bates
+-- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
+
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY PC IS
+    PORT (
+        Clock   : IN  STD_LOGIC;
+        Resetn  : IN  STD_LOGIC;
+        D       : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);  -- 32-bit input
+        Q       : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)   -- 32-bit output
+    );
+END PC;
+
+ARCHITECTURE behavioral OF PC IS
+    SIGNAL reg_data : STD_LOGIC_VECTOR(31 DOWNTO 0) := (OTHERS => '0');
+BEGIN
+    PROCESS (Clock, Resetn)
+    BEGIN
+        IF Resetn = '0' THEN
+            reg_data <= (OTHERS => '0');  -- Reset to 0
+        ELSIF rising_edge(Clock) THEN
+            reg_data <= D;  -- Update on rising edge
+        END IF;
+    END PROCESS;
+
+    Q <= reg_data;
+END behavioral;

@@ -1,0 +1,95 @@
+-- Part_2_Combined.vhd
+-- This file integrates the IF_ID and EX_MEM_WB blocks to form a complete single-cycle processor.
+-- Authors: Matthew Collins & Lewis Bates
+-- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
+-- Date: April 26, 2025
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+-- Entity declaration for the combined single-cycle processor
+entity Part_2_Combined is
+    port (
+        clk   : in std_logic;  -- Clock signal to synchronize state elements
+        reset : in std_logic   -- Reset signal to initialize state elements
+    );
+end Part_2_Combined;
+
+architecture structural of Part_2_Combined is
+    -- Signals to connect outputs from IF_ID to inputs of EX_MEM_WB
+    signal ID_EX_PC_plus_4     : std_logic_vector(31 downto 0);  -- PC + 4 value passed from ID to EX stage
+    signal ID_EX_read_data1    : std_logic_vector(31 downto 0);  -- Data from register 1, passed to EX stage
+    signal ID_EX_read_data2    : std_logic_vector(31 downto 0);  -- Data from register 2, passed to EX stage
+    signal ID_EX_sign_extended : std_logic_vector(31 downto 0);  -- Sign-extended immediate value for EX stage
+    signal ID_EX_funct         : std_logic_vector(5 downto 0);   -- Funct field from instruction for ALU control
+    signal ID_EX_write_register: std_logic_vector(4 downto 0);   -- Destination register address for WB stage
+    signal ID_EX_RegDst        : std_logic;                      -- Control signal for destination register selection
+    signal ID_EX_Branch        : std_logic;                      -- Control signal indicating a branch instruction
+    signal ID_EX_RegWrite      : std_logic;                      -- Control signal to enable register write-back
+    signal ID_EX_ALUSrc        : std_logic;                      -- Control signal to select ALU operand source
+    signal ID_EX_MemRead       : std_logic;                      -- Control signal to enable memory read
+    signal ID_EX_MemWrite      : std_logic;                      -- Control signal to enable memory write
+    signal ID_EX_MemtoReg      : std_logic;                      -- Control signal to select memory or ALU result for write-back
+    signal ID_EX_ALUOp         : std_logic_vector(1 downto 0);   -- Control signal for ALU operation type
+
+    -- Signals to connect outputs from EX_MEM_WB back to IF_ID
+    signal branch_address_from_EX : std_logic_vector(31 downto 0); -- Computed branch target address fed back to IF stage
+    signal pc_select_from_EX      : std_logic;                     -- Signal to select between PC+4 or branch address
+    signal write_register_from_WB : std_logic_vector(4 downto 0);  -- Register address to write data back to
+    signal write_data_from_WB     : std_logic_vector(31 downto 0); -- Data to be written back to the register file
+    signal reg_write_from_WB      : std_logic;                     -- Enable signal for writing to the register file
+
+begin
+    -- Instantiate the IF_ID block (Instruction Fetch and Decode stages)
+    IF_ID_inst : entity work.Part_2_IF_ID
+        port map (
+            clk                => clk,                       -- Clock signal for synchronization
+            reset              => reset,                     -- Reset signal to initialize IF/ID stage
+            pc_select          => pc_select_from_EX,         -- Input from EX stage to select PC source
+            branch_address     => branch_address_from_EX,    -- Input branch address from EX stage
+            write_register     => write_register_from_WB,    -- Input from WB stage for register write address
+            write_data         => write_data_from_WB,        -- Input from WB stage for register write data
+            reg_write          => reg_write_from_WB,         -- Input from WB stage to enable register write
+            ID_EX_PC_plus_4    => ID_EX_PC_plus_4,           -- Output PC + 4 to EX stage
+            ID_EX_read_data1   => ID_EX_read_data1,          -- Output register 1 data to EX stage
+            ID_EX_read_data2   => ID_EX_read_data2,          -- Output register 2 data to EX stage
+            ID_EX_sign_extended=> ID_EX_sign_extended,       -- Output sign-extended immediate to EX stage
+            ID_EX_funct        => ID_EX_funct,               -- Output funct field to EX stage
+            ID_EX_write_register=> ID_EX_write_register,     -- Output destination register to EX stage
+            ID_EX_RegDst       => ID_EX_RegDst,              -- Output RegDst control signal to EX stage
+            ID_EX_Branch       => ID_EX_Branch,              -- Output Branch control signal to EX stage
+            ID_EX_RegWrite     => ID_EX_RegWrite,            -- Output RegWrite control signal to EX stage
+            ID_EX_ALUSrc       => ID_EX_ALUSrc,              -- Output ALUSrc control signal to EX stage
+            ID_EX_MemRead      => ID_EX_MemRead,             -- Output MemRead control signal to EX stage
+            ID_EX_MemWrite     => ID_EX_MemWrite,            -- Output MemWrite control signal to EX stage
+            ID_EX_MemtoReg     => ID_EX_MemtoReg,            -- Output MemtoReg control signal to EX stage
+            ID_EX_ALUOp        => ID_EX_ALUOp                -- Output ALUOp control signal to EX stage
+        );
+
+    -- Instantiate the EX_MEM_WB block (Execute, Memory, and Write Back stages)
+    EX_MEM_WB_inst : entity work.Part_2_EX_MEM_WB
+        port map (
+            clk                => clk,                       -- Clock signal for synchronization
+            reset              => reset,                     -- Reset signal to initialize EX/MEM/WB stages
+            ID_EX_PC_plus_4    => ID_EX_PC_plus_4,           -- Input PC + 4 from ID stage
+            ID_EX_read_data1   => ID_EX_read_data1,          -- Input register 1 data from ID stage
+            ID_EX_read_data2   => ID_EX_read_data2,          -- Input register 2 data from ID stage
+            ID_EX_sign_extended=> ID_EX_sign_extended,       -- Input sign-extended immediate from ID stage
+            ID_EX_funct        => ID_EX_funct,               -- Input funct field from ID stage
+            ID_EX_write_register=> ID_EX_write_register,     -- Input destination register from ID stage
+            ID_EX_RegDst       => ID_EX_RegDst,              -- Input RegDst control signal from ID stage
+            ID_EX_Branch       => ID_EX_Branch,              -- Input Branch control signal from ID stage
+            ID_EX_RegWrite     => ID_EX_RegWrite,            -- Input RegWrite control signal from ID stage
+            ID_EX_ALUSrc       => ID_EX_ALUSrc,              -- Input ALUSrc control signal from ID stage
+            ID_EX_MemRead      => ID_EX_MemRead,             -- Input MemRead control signal from ID stage
+            ID_EX_MemWrite     => ID_EX_MemWrite,            -- Input MemWrite control signal from ID stage
+            ID_EX_MemtoReg     => ID_EX_MemtoReg,            -- Input MemtoReg control signal from ID stage
+            ID_EX_ALUOp        => ID_EX_ALUOp,               -- Input ALUOp control signal from ID stage
+            branch_address     => branch_address_from_EX,    -- Output branch address to IF stage
+            pc_select          => pc_select_from_EX,         -- Output PC select signal to IF stage
+            write_register     => write_register_from_WB,    -- Output register address to WB stage
+            write_data         => write_data_from_WB,        -- Output write-back data to WB stage
+            reg_write          => reg_write_from_WB          -- Output register write enable to WB stage
+        );
+
+end structural;
