@@ -1,0 +1,168 @@
+-- Design Phase 3 
+-- Date: 4/26/2025
+-- Authors: Matthew Collins & Lewis Bates
+-- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Part_1_EX_MEM_WB is
+	port(
+		-- Inputs
+		clock				: in std_logic;
+		reset				: in std_logic;
+		PC_plus_4		: in std_logic_vector(31 downto 0);
+		read_data_1		: in std_logic_vector(31 downto 0);
+		read_data_2		: in std_logic_vector(31 downto 0);
+		sign_ext_imm	: in std_logic_vector(31 downto 0);
+		Branch			: in std_logic;
+		ALUSrc			: in std_logic;
+		ALUOp				: in std_logic_vector(1 downto 0);
+		MemWrite			: in std_logic;
+		MemToReg			: in std_logic;
+		
+		-- Outputs
+		next_PC			: out std_logic_vector(31 downto 0);
+		write_data		: out std_logic_vector(31 downto 0)
+	);
+end Part_1_EX_MEM_WB;
+	
+architecture structure of Part_1_EX_MEM_WB is
+	
+	-- Components to be used in the top-level entity
+	
+	component ALU is
+		port (
+        A, B     : in  std_logic_vector(31 downto 0);  -- Two 32-bit operands
+        Control  : in  std_logic_vector(3 downto 0);   -- 4-bit ALU operation control
+        Result   : out std_logic_vector(31 downto 0);  -- 32-bit result
+        Zero     : out std_logic                       -- 1-bit zero flag
+		);
+	end component;
+	
+	component ALU_Control is
+		port(
+			ALU_Op			: in std_logic_vector(1 downto 0);
+			instr_funct		: in std_logic_vector(5 downto 0);
+			operation		: out std_logic_vector(3 downto 0)
+		);
+	end component;
+		
+	component memory_1 is
+		port(
+			address	: in std_logic_vector(7 downto 0);
+			clock		: in std_logic;
+			data		: in std_logic_vector(31 downto 0);
+			wren		: in std_logic;
+			q			: out std_logic_vector(31 downto 0)
+		);
+	end component;
+
+	component generic_adder is
+		generic(n : integer := 32);
+		PORT (
+			A, B : IN  STD_LOGIC_VECTOR(n-1 DOWNTO 0);  -- (n-1)-bit inputs
+			F 	 : OUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)   -- (n-1)-bit output (A + B)
+		);
+	end component;
+	
+	component shift_left_by_2 is
+		generic(n : integer := 32);
+		port(
+			input 	: in std_logic_vector(n-1 downto 0);
+			output 	: out std_logic_vector(n-1 downto 0)
+		);
+	end component;
+	
+	component Two_Input_Mux is
+		generic(n : integer := 32); 
+		port (
+			Input0, Input1 : in  std_logic_vector(n-1 downto 0);  -- Two (n-1)-bit inputs
+			Sel            : in  std_logic;                      -- 1-bit select signal
+			Output         : out std_logic_vector(n-1 downto 0)   -- (n-1)-bit output
+    );
+	 end component;
+	 
+	-- Internal Signals
+	
+	-- ALU Signals
+	signal ALU_input_2 : std_logic_vector(31 downto 0); -- Output of the ALUSrc Mux
+	signal operation	 : std_logic_vector(3 downto 0); -- Operation for the ALU to perform 
+	signal ALU_Output  : std_logic_vector(31 downto 0); -- Output value of the ALU
+	signal ALU_Zero	 : std_logic; 							-- Status bit of the ALU output that it is zero.
+	
+	-- Memory Signals
+	signal data_mem_out 	: std_logic_vector(31 downto 0); -- Output of the data memory
+	
+	-- Branch Signals
+	signal address_offset : std_logic_vector(31 downto 0); -- Address offset value for branch instructions
+	signal branch_address : std_logic_vector(31 downto 0); -- Destination Address for a branch instruction
+	signal branch_enable	 : std_logic;							 -- Enables a branch to occur if signal goes high	
+	
+	begin
+		
+		ALU_Mux: Two_Input_Mux generic map(32)
+									  port map(
+											Input0 	=> read_data_2,
+											Input1 	=> sign_ext_imm,
+											Sel 		=> ALUSrc,
+											Output 	=> ALU_input_2
+									  );
+				
+		ALU_Control_unit: ALU_Control port map(
+											ALU_Op		=> ALUOp,
+											instr_funct => sign_ext_imm(5 downto 0),
+											operation   => operation
+										);
+										
+		ALU_unit: ALU port map(
+								A 			=> read_data_1,
+								B 			=> ALU_input_2,
+								Control 	=> operation,
+								Result 	=> ALU_Output,
+								Zero 		=> ALU_Zero
+							);
+							
+		data_mem: memory_1 port map(
+								address 	=> ALU_Output(7 downto 0),
+								clock 	=> clock,
+								data 		=> read_data_2,
+								wren 		=> MemWrite,
+								q 			=>	data_mem_out
+							);
+							
+		write_back_mux: Two_Input_Mux generic map(32)
+												port map(
+													Input0 	=> ALU_Output,
+													Input1 	=> data_mem_out,
+													Sel 		=> MemtoReg,
+													Output 	=> write_data
+												);
+												
+		shift_left_2: shift_left_by_2 generic map(32)
+												port map(
+													input 	=> sign_ext_imm,
+													output 	=> address_offset
+												);
+												
+		branch_adder: generic_adder generic map(32)
+											 port map(
+													A => PC_plus_4,
+													B => address_offset,
+													F => branch_address
+												);
+												
+		branch_enable <= Branch and ALU_Zero;
+		
+		branch_mux: Two_Input_Mux generic map(32)
+										  port map(
+												Input0 	=> PC_plus_4,
+												Input1 	=> branch_address,
+												Sel 		=> branch_enable,
+												Output 	=> next_PC
+										  );
+end architecture;
+	
+		
+		
+		

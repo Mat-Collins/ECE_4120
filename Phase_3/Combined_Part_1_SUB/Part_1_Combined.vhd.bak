@@ -1,0 +1,132 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use work.type_def.all; -- For REG_ARRAY and STD_LOGIC_ARRAY types
+
+entity Part_1_Combined is
+    port (
+        clock   : in  std_logic;                     -- Clock signal
+        reset   : in  std_logic;                     -- Synchronous reset
+        PC_out  : out std_logic_vector(31 downto 0); -- Current PC for observation
+        write_data : out std_logic_vector(31 downto 0) -- Write data to register file
+    );
+end Part_1_Combined;
+
+architecture structural of Part_1_Combined is
+
+    -- Component declarations
+    component Part_1_IF_ID
+        port (
+            clock       : in  std_logic;
+            reset       : in  std_logic;
+            PC_in       : in  std_logic_vector(31 downto 0);
+            write_data  : in  std_logic_vector(31 downto 0);
+            PC_out      : out std_logic_vector(31 downto 0);
+            instruction : out std_logic_vector(31 downto 0);
+            RegWrite    : out std_logic;
+            MemtoReg    : out std_logic;
+            MemRead     : out std_logic;
+            MemWrite    : out std_logic;
+            ALUSrc      : out std_logic;
+            RegDst      : out std_logic;
+            Branch      : out std_logic;
+            ALUOp       : out std_logic_vector(1 downto 0);
+            read_data1  : out std_logic_vector(31 downto 0);
+            read_data2  : out std_logic_vector(31 downto 0);
+            sign_extend : out std_logic_vector(31 downto 0);
+            write_reg   : out std_logic_vector(4 downto 0)
+        );
+    end component;
+
+    component Part_1_EX_MEM_WB
+        port (
+            clock       : in  std_logic;
+            reset       : in  std_logic;
+            read_data1  : in  std_logic_vector(31 downto 0);
+            read_data2  : in  std_logic_vector(31 downto 0);
+            sign_extend : in  std_logic_vector(31 downto 0);
+            instruction : in  std_logic_vector(31 downto 0);
+            RegWrite    : in  std_logic;
+            MemtoReg    : in  std_logic;
+            MemRead     : in  std_logic;
+            MemWrite    : in  std_logic;
+            ALUSrc      : in  std_logic;
+            RegDst      : in  std_logic;
+            Branch      : in  std_logic;
+            ALUOp       : in  std_logic_vector(1 downto 0);
+            write_reg   : in  std_logic_vector(4 downto 0);
+            PC_in       : in  std_logic_vector(31 downto 0);
+            next_PC     : out std_logic_vector(31 downto 0);
+            write_data  : out std_logic_vector(31 downto 0)
+        );
+    end component;
+
+    -- Signals for interconnection
+    signal PC_int            : std_logic_vector(31 downto 0);
+    signal next_PC_int       : std_logic_vector(31 downto 0);
+    signal instruction_int   : std_logic_vector(31 downto 0);
+    signal RegWrite_int      : std_logic;
+    signal MemtoReg_int      : std_logic;
+    signal MemRead_int       : std_logic;
+    signal MemWrite_int      : std_logic;
+    signal ALUSrc_int        : std_logic;
+    signal RegDst_int        : std_logic;
+    signal Branch_int        : std_logic;
+    signal ALUOp_int         : std_logic_vector(1 downto 0);
+    signal read_data1_int    : std_logic_vector(31 downto 0);
+    signal read_data2_int    : std_logic_vector(31 downto 0);
+    signal sign_extend_int   : std_logic_vector(31 downto 0);
+    signal write_reg_int     : std_logic_vector(4 downto 0);
+    signal write_data_int    : std_logic_vector(31 downto 0);
+
+begin
+    -- Instantiate IF_ID block
+    IF_ID_inst: Part_1_IF_ID
+        port map (
+            clock       => clock,
+            reset       => reset,
+            PC_in       => next_PC_int,
+            write_data  => write_data_int,
+            PC_out      => PC_int,
+            instruction => instruction_int,
+            RegWrite    => RegWrite_int,
+            MemtoReg    => MemtoReg_int,
+            MemRead     => MemRead_int,
+            MemWrite    => MemWrite_int,
+            ALUSrc      => ALUSrc_int,
+            RegDst      => RegDst_int,
+            Branch      => Branch_int,
+            ALUOp       => ALUOp_int,
+            read_data1  => read_data1_int,
+            read_data2  => read_data2_int,
+            sign_extend => sign_extend_int,
+            write_reg   => write_reg_int
+        );
+
+    -- Instantiate EX_MEM_WB block
+    EX_MEM_WB_inst: Part_1_EX_MEM_WB
+        port map (
+            clock       => clock,
+            reset       => reset,
+            read_data1  => read_data1_int,
+            read_data2  => read_data2_int,
+            sign_extend => sign_extend_int,
+            instruction => instruction_int,
+            RegWrite    => RegWrite_int,
+            MemtoReg    => MemtoReg_int,
+            MemRead     => MemRead_int,
+            MemWrite    => MemWrite_int,
+            ALUSrc      => ALUSrc_int,
+            RegDst      => RegDst_int,
+            Branch      => Branch_int,
+            ALUOp       => ALUOp_int,
+            write_reg   => write_reg_int,
+            PC_in       => PC_int,
+            next_PC     => next_PC_int,
+            write_data  => write_data_int
+        );
+
+    -- Connect outputs to top-level ports
+    PC_out <= PC_int;
+    write_data <= write_data_int;
+
+end structural;
