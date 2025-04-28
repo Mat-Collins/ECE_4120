@@ -1,39 +1,40 @@
 -- Design Phase 3 
--- Date: 4/26/2025
+-- Date: 4/27/2025
 -- Authors: Matthew Collins & Lewis Bates
 -- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
 
 library ieee;
 use ieee.std_logic_1164.all;
 
+-- The Execute, Memory, and Write Back stages of the pipelined architecture 
 entity Part_2_EX_MEM_WB is
 	port(
 		
-		clock				: in std_logic;
-		reset				: in std_logic;
+		clock				: in std_logic;								-- Clock signal for synchronous behavior
+		reset				: in std_logic;								-- Active-low reset for the intermediate registers
 		
 		-- Inputs from ID stage via ID/EX pipeline register
-		PC_plus_4		: in std_logic_vector(31 downto 0);
-		read_data_1		: in std_logic_vector(31 downto 0);
-		read_data_2		: in std_logic_vector(31 downto 0);
-		sign_extended	: in std_logic_vector(31 downto 0);
-		rd_register		: in std_logic_vector(4 downto 0);
-		rt_register		: in std_logic_vector(4 downto 0);
-		RegDst			: in std_logic;
-		Branch			: in std_logic;
-		RegWrite			: in std_logic;
-		ALUSrc			: in std_logic;
-		MemRead			: in std_logic;
-		MemWrite			: in std_logic;
-		MemtoReg			: in std_logic;
-		ALUOp				: in std_logic_vector(1 downto 0);
+		PC_plus_4		: in std_logic_vector(31 downto 0);		-- The PC+4 value from the ID/EX Register
+		read_data_1		: in std_logic_vector(31 downto 0);		-- The Read Data 1 from the ID/EX Register
+		read_data_2		: in std_logic_vector(31 downto 0);		-- The Read Data 2 from the ID/Ex Register
+		sign_extended	: in std_logic_vector(31 downto 0);		-- The Sign Extended value from the ID/EX Register
+		rd_register		: in std_logic_vector(4 downto 0);		-- The RD Register number from the ID/EX Register
+		rt_register		: in std_logic_vector(4 downto 0);		-- The RT Register number from the ID/Ex Register 
+		RegDst			: in std_logic;								-- The Register Destination control bit from the ID/EX Register
+		Branch			: in std_logic;								-- The Branch control bit rom the ID/EX Register
+		RegWrite			: in std_logic;								-- The Register Write control bit from the ID/EX Register
+		ALUSrc			: in std_logic;								-- The ALU Source control bit from the ID/EX Register
+		MemRead			: in std_logic;								-- The Memory Read control bit from the ID/EX Register
+		MemWrite			: in std_logic;								-- The Memory Write control bit from the ID/EX Register
+		MemtoReg			: in std_logic;								-- The Memory to Register control bit from th ID/EX Register
+		ALUOp				: in std_logic_vector(1 downto 0);		-- The ALU Operation control bits from the ID/EX Register
 		
 		-- Outputs
-		branch_address	: out std_logic_vector(31 downto 0);
-		pc_select		: out std_logic;
-		write_register	: out std_logic_vector(4 downto 0);
-		write_data		: out	std_logic_vector(31 downto 0);
-		reg_write		: out std_logic
+		branch_address	: out std_logic_vector(31 downto 0);	-- The branch address to bee used for a branch instruction
+		pc_select		: out std_logic;								-- The PC Select bit to choose between PC+4c and the branch address
+		write_register	: out std_logic_vector(4 downto 0);		-- The register to write data to
+		write_data		: out	std_logic_vector(31 downto 0);	-- The data to write to a register
+		reg_write		: out std_logic								-- The enable bit to enable writing to a register
 	);
 end Part_2_EX_MEM_WB;
 
@@ -52,9 +53,9 @@ architecture structure of Part_2_EX_MEM_WB is
 	
 	component ALU_Control is
 		port(
-			ALU_Op			: in std_logic_vector(1 downto 0);
-			instr_funct		: in std_logic_vector(5 downto 0);
-			operation		: out std_logic_vector(3 downto 0)
+			ALU_Op			: in std_logic_vector(1 downto 0);	-- The operation type control input
+			instr_funct		: in std_logic_vector(5 downto 0);	-- The function bits of the instruction (Only used for R-type)
+			operation		: out std_logic_vector(3 downto 0)	-- The operation select bits for the ALU
 		);
 	end component;
 	
@@ -68,11 +69,11 @@ architecture structure of Part_2_EX_MEM_WB is
 	
 	component memory_1 is
 		port(
-			address : in std_logic_vector(7 downto 0);
+			address : in std_logic_vector(7 downto 0);		-- The address to be written to or read from
 			clock		: in std_logic;
-			data		: in std_logic_vector(31 downto 0);
-			wren		: in std_logic;
-			q			: out std_logic_vector(31 downto 0)
+			data		: in std_logic_vector(31 downto 0);		-- The data to be written to the address
+			wren		: in std_logic;								-- The write enable bit 
+			q			: out std_logic_vector(31 downto 0)		-- The data stored at the address
 		);
 	end component;
 	
@@ -88,19 +89,19 @@ architecture structure of Part_2_EX_MEM_WB is
 	component shift_left_by_2 is
 		generic(n : integer := 32);
 		port(
-			input 	: in std_logic_vector(n-1 downto 0);
-			output 	: out std_logic_vector(n-1 downto 0)
+			input 	: in std_logic_vector(n-1 downto 0);	-- Unshifted input
+			output 	: out std_logic_vector(n-1 downto 0)	-- Input value shifted to the left by two bits
 		);
 	end component;
 	
 	component register_N is
 		 GENERIC (N : INTEGER := 32);
 		 PORT (
-			  D       : IN  STD_LOGIC_VECTOR (N-1 DOWNTO 0);
-			  enable  : IN  STD_LOGIC;
-			  Resetn  : IN  STD_LOGIC;
-			  Clock   : IN  STD_LOGIC;
-			  Q       : OUT STD_LOGIC_VECTOR (N-1 DOWNTO 0)
+			  D       : IN  STD_LOGIC_VECTOR (N-1 DOWNTO 0);	-- Input value to be loaded
+			  enable  : IN  STD_LOGIC;									-- Register enable
+			  Resetn  : IN  STD_LOGIC;									-- Active-low reset
+			  Clock   : IN  STD_LOGIC;									-- Clock signal
+			  Q       : OUT STD_LOGIC_VECTOR (N-1 DOWNTO 0)		-- Register output (stored value)
 		 );
 	end component;
 	
