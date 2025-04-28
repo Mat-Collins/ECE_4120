@@ -202,16 +202,14 @@ begin
 
     -- IF/ID Pipeline Register Process
     -- Stores the instruction and PC+4 for the next stage
-    process(clk)
+    process(reset, clk)
     begin
-        if rising_edge(clk) then        -- On clock rising edge
-            if reset = '1' then         -- If reset is active
-                IF_ID_instruction <= (others => '0'); -- Clear instruction
-                IF_ID_PC_plus_4   <= (others => '0'); -- Clear PC+4
-            else                        -- Normal operation
-                IF_ID_instruction <= instruction;     -- Latch current instruction
-                IF_ID_PC_plus_4   <= pc_plus_4;       -- Latch PC+4
-            end if;
+        if reset = '0' then         -- If reset is active
+            IF_ID_instruction <= (others => '0'); -- Clear instruction
+            IF_ID_PC_plus_4   <= (others => '0'); -- Clear PC+4
+        elsif rising_edge(clk) then               -- Normal operation
+            IF_ID_instruction <= instruction;     -- Latch current instruction
+            IF_ID_PC_plus_4   <= pc_plus_4;       -- Latch PC+4
         end if;
     end process;
 
@@ -252,42 +250,40 @@ begin
 
     -- ID/EX Pipeline Register Process
     -- Stores decoded information for the Execute (EX) stage
-    process(clk)
+    process(reset, clk)
     begin
-        if rising_edge(clk) then        -- On clock rising edge
-            if reset = '1' then         -- If reset is active
-                ID_EX_PC_plus_4_reg      <= (others => '0'); -- Clear PC+4
-                ID_EX_rd_read_data_reg   <= (others => '0'); -- Clear rs data
-                ID_EX_rt_read_data_reg   <= (others => '0'); -- Clear rt data
-                ID_EX_sign_extended_reg  <= (others => '0'); -- Clear sign-extended immediate
-                ID_EX_write_register_reg <= (others => '0'); -- Clear destination register
-                ID_EX_rd_register_reg    <= (others => '0'); -- Clear rd register address
-                ID_EX_rt_register_reg    <= (others => '0'); -- Clear rt register address
-                ID_EX_RegDst_reg         <= '0';             -- Clear RegDst
-                ID_EX_Branch_reg         <= '0';             -- Clear Branch
-                ID_EX_RegWrite_reg       <= '0';             -- Clear RegWrite
-                ID_EX_ALUSrc_reg         <= '0';             -- Clear ALUSrc
-                ID_EX_MemRead_reg        <= '0';             -- Clear MemRead
-                ID_EX_MemWrite_reg       <= '0';             -- Clear MemWrite
-                ID_EX_MemtoReg_reg       <= '0';             -- Clear MemtoReg
-                ID_EX_ALUOp_reg          <= (others => '0'); -- Clear ALUOp
-            else                        -- Normal operation
-                ID_EX_PC_plus_4_reg      <= IF_ID_PC_plus_4;         -- Latch PC+4
-                ID_EX_rd_read_data_reg   <= read_data1;              -- Latch rs data
-                ID_EX_rt_read_data_reg   <= read_data2;              -- Latch rt data
-                ID_EX_sign_extended_reg  <= sign_extended;           -- Latch sign-extended immediate
-                ID_EX_write_register_reg <= write_register_selected; -- Latch destination register
-                ID_EX_rd_register_reg    <= IF_ID_instruction(15 downto 11); -- Latch rd address
-                ID_EX_rt_register_reg    <= IF_ID_instruction(20 downto 16); -- Latch rt address
-                ID_EX_RegDst_reg         <= reg_dst;                 -- Latch RegDst
-                ID_EX_Branch_reg         <= branch;                  -- Latch Branch
-                ID_EX_RegWrite_reg       <= reg_write_id;            -- Latch RegWrite
-                ID_EX_ALUSrc_reg         <= alu_src;                 -- Latch ALUSrc
-                ID_EX_MemRead_reg        <= mem_read;                -- Latch MemRead
-                ID_EX_MemWrite_reg       <= mem_write;               -- Latch MemWrite
-                ID_EX_MemtoReg_reg       <= mem_to_reg;              -- Latch MemtoReg
-                ID_EX_ALUOp_reg          <= alu_op;                  -- Latch ALUOp
-            end if;
+        if reset = '0' then         -- If reset is active
+            ID_EX_PC_plus_4_reg      <= (others => '0'); -- Clear PC+4
+            ID_EX_rd_read_data_reg   <= (others => '0'); -- Clear rs data
+            ID_EX_rt_read_data_reg   <= (others => '0'); -- Clear rt data
+            ID_EX_sign_extended_reg  <= (others => '0'); -- Clear sign-extended immediate
+            ID_EX_write_register_reg <= (others => '0'); -- Clear destination register
+            ID_EX_rd_register_reg    <= (others => '0'); -- Clear rd register address
+            ID_EX_rt_register_reg    <= (others => '0'); -- Clear rt register address
+            ID_EX_RegDst_reg         <= '0';             -- Clear RegDst
+            ID_EX_Branch_reg         <= '0';             -- Clear Branch
+            ID_EX_RegWrite_reg       <= '0';             -- Clear RegWrite
+            ID_EX_ALUSrc_reg         <= '0';             -- Clear ALUSrc
+            ID_EX_MemRead_reg        <= '0';             -- Clear MemRead
+            ID_EX_MemWrite_reg       <= '0';             -- Clear MemWrite
+            ID_EX_MemtoReg_reg       <= '0';             -- Clear MemtoReg
+            ID_EX_ALUOp_reg          <= (others => '0'); -- Clear ALUOp
+        elsif rising_edge(clk) then                    -- Normal operation
+            ID_EX_PC_plus_4_reg      <= IF_ID_PC_plus_4;         -- Latch PC+4
+            ID_EX_rd_read_data_reg   <= read_data1;              -- Latch rs data
+            ID_EX_rt_read_data_reg   <= read_data2;              -- Latch rt data
+            ID_EX_sign_extended_reg  <= sign_extended;           -- Latch sign-extended immediate
+            ID_EX_write_register_reg <= write_register_selected; -- Latch destination register
+            ID_EX_rd_register_reg    <= IF_ID_instruction(15 downto 11); -- Latch rd address
+            ID_EX_rt_register_reg    <= IF_ID_instruction(20 downto 16); -- Latch rt address
+            ID_EX_RegDst_reg         <= reg_dst;                 -- Latch RegDst
+            ID_EX_Branch_reg         <= branch;                  -- Latch Branch
+            ID_EX_RegWrite_reg       <= reg_write_id;            -- Latch RegWrite
+            ID_EX_ALUSrc_reg         <= alu_src;                 -- Latch ALUSrc
+            ID_EX_MemRead_reg        <= mem_read;                -- Latch MemRead
+            ID_EX_MemWrite_reg       <= mem_write;               -- Latch MemWrite
+            ID_EX_MemtoReg_reg       <= mem_to_reg;              -- Latch MemtoReg
+            ID_EX_ALUOp_reg          <= alu_op;                  -- Latch ALUOp
         end if;
     end process;
 
