@@ -3,7 +3,7 @@
 -- architecture with forwarding and hazard units, as part of Phase 3 bonus requirements.
 
 -- Design Phase 3
--- Date: 4/25/2025
+-- Date: 4/27/2025
 -- Authors: Matthew Collins & Lewis Bates
 -- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
 
