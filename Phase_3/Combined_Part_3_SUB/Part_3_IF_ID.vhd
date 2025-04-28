@@ -205,19 +205,17 @@ begin
 
     -- ### IF/ID Pipeline Register ###
     -- Latches the instruction and PC+4 from IF stage for use in ID stage
-    process(clk)
+    process(reset, clk)
     begin
-        if rising_edge(clk) then
-            if reset = '1' then
-                -- Reset IF/ID register contents to zeros on reset
-                IF_ID_instruction <= (others => '0');
-                IF_ID_PC_plus_4   <= (others => '0');
-            elsif stall = '0' then
-                -- Latch instruction and PC+4 only if not stalling
-                IF_ID_instruction <= instruction;
-                IF_ID_PC_plus_4   <= pc_plus_4;
-            end if; -- Stall case: retain previous values (no update)
-        end if;
+        if reset = '0' then
+            -- Reset IF/ID register contents to zeros on reset
+            IF_ID_instruction <= (others => '0');
+            IF_ID_PC_plus_4   <= (others => '0');
+        elsif rising_edge(clk) and stall = '0' then
+            -- Latch instruction and PC+4 only if not stalling
+            IF_ID_instruction <= instruction;
+            IF_ID_PC_plus_4   <= pc_plus_4;
+        end if; -- Stall case: retain previous values (no update)
     end process;
 
     -- Extract rs, rt, and rd fields from the latched instruction
@@ -270,57 +268,55 @@ begin
 
     -- ### ID/EX Pipeline Register ###
     -- Latches ID stage outputs for use in EX stage; inserts bubble (nop) on stall
-    process(clk)
+    process(reset, clk)
     begin
-        if rising_edge(clk) then
-            if reset = '1' then
-                -- Reset ID/EX register contents to zeros
-                ID_EX_PC_plus_4_reg      <= (others => '0');
-                ID_EX_read_data1_reg     <= (others => '0');
-                ID_EX_read_data2_reg     <= (others => '0');
-                ID_EX_sign_extended_reg  <= (others => '0');
-                ID_EX_rs_reg             <= (others => '0');
-                ID_EX_rt_reg             <= (others => '0');
-                ID_EX_rd_reg             <= (others => '0');
-                ID_EX_write_register_reg <= (others => '0');
-                ID_EX_Branch_reg         <= '0';
-                ID_EX_RegWrite_reg       <= '0';
-                ID_EX_ALUSrc_reg         <= '0';
-                ID_EX_MemRead_reg        <= '0';
-                ID_EX_MemWrite_reg       <= '0';
-                ID_EX_MemtoReg_reg       <= '0';
-                ID_EX_ALUOp_reg          <= (others => '0');
-                ID_EX_reg_dst_bit        <= '0';
-            elsif stall = '1' then
-                -- Insert bubble (nop) by clearing control signals on stall
-                ID_EX_Branch_reg         <= '0';
-                ID_EX_RegWrite_reg       <= '0';
-                ID_EX_ALUSrc_reg         <= '0';
-                ID_EX_MemRead_reg        <= '0';
-                ID_EX_MemWrite_reg       <= '0';
-                ID_EX_MemtoReg_reg       <= '0';
-                ID_EX_ALUOp_reg          <= (others => '0');
-                ID_EX_reg_dst_bit        <= '0';
-                -- Data fields retain previous values during stall
-            else
-                -- Normal operation: latch ID stage outputs for EX stage
-                ID_EX_PC_plus_4_reg      <= IF_ID_PC_plus_4;         -- Latch PC+4
-                ID_EX_read_data1_reg     <= read_data1;              -- Latch rs data
-                ID_EX_read_data2_reg     <= read_data2;              -- Latch rt data
-                ID_EX_sign_extended_reg  <= sign_extended;           -- Latch sign-extended immediate
-                ID_EX_rs_reg             <= rs;                      -- Latch rs for forwarding unit
-                ID_EX_rt_reg             <= rt;                      -- Latch rt for forwarding unit and mux
-                ID_EX_rd_reg             <= rd;                      -- Latch rd for mux selection
-                ID_EX_write_register_reg <= mux_write_register;      -- Latch selected destination register
-                ID_EX_Branch_reg         <= branch;                  -- Latch Branch signal
-                ID_EX_RegWrite_reg       <= reg_write_id;            -- Latch RegWrite signal
-                ID_EX_ALUSrc_reg         <= alu_src;                 -- Latch ALUSrc signal
-                ID_EX_MemRead_reg        <= mem_read;                -- Latch MemRead signal
-                ID_EX_MemWrite_reg       <= mem_write;               -- Latch MemWrite signal
-                ID_EX_MemtoReg_reg       <= mem_to_reg;              -- Latch MemtoReg signal
-                ID_EX_ALUOp_reg          <= alu_op;                  -- Latch ALUOp signal
-                ID_EX_reg_dst_bit        <= reg_dst_id;              -- Latch RegDst signal from intermediate signal
-            end if;
+        if reset = '0' then
+            -- Reset ID/EX register contents to zeros
+            ID_EX_PC_plus_4_reg      <= (others => '0');
+            ID_EX_read_data1_reg     <= (others => '0');
+            ID_EX_read_data2_reg     <= (others => '0');
+            ID_EX_sign_extended_reg  <= (others => '0');
+            ID_EX_rs_reg             <= (others => '0');
+            ID_EX_rt_reg             <= (others => '0');
+            ID_EX_rd_reg             <= (others => '0');
+            ID_EX_write_register_reg <= (others => '0');
+            ID_EX_Branch_reg         <= '0';
+            ID_EX_RegWrite_reg       <= '0';
+            ID_EX_ALUSrc_reg         <= '0';
+            ID_EX_MemRead_reg        <= '0';
+            ID_EX_MemWrite_reg       <= '0';
+            ID_EX_MemtoReg_reg       <= '0';
+            ID_EX_ALUOp_reg          <= (others => '0');
+            ID_EX_reg_dst_bit        <= '0';
+        elsif rising_edge(clk) and stall = '1' then
+            -- Insert bubble (nop) by clearing control signals on stall
+            ID_EX_Branch_reg         <= '0';
+            ID_EX_RegWrite_reg       <= '0';
+            ID_EX_ALUSrc_reg         <= '0';
+            ID_EX_MemRead_reg        <= '0';
+            ID_EX_MemWrite_reg       <= '0';
+            ID_EX_MemtoReg_reg       <= '0';
+            ID_EX_ALUOp_reg          <= (others => '0');
+            ID_EX_reg_dst_bit        <= '0';
+            -- Data fields retain previous values during stall
+        elsif rising_edge(clk) and stall = '0' then
+            -- Normal operation: latch ID stage outputs for EX stage
+            ID_EX_PC_plus_4_reg      <= IF_ID_PC_plus_4;         -- Latch PC+4
+            ID_EX_read_data1_reg     <= read_data1;              -- Latch rs data
+            ID_EX_read_data2_reg     <= read_data2;              -- Latch rt data
+            ID_EX_sign_extended_reg  <= sign_extended;           -- Latch sign-extended immediate
+            ID_EX_rs_reg             <= rs;                      -- Latch rs for forwarding unit
+            ID_EX_rt_reg             <= rt;                      -- Latch rt for forwarding unit and mux
+            ID_EX_rd_reg             <= rd;                      -- Latch rd for mux selection
+            ID_EX_write_register_reg <= mux_write_register;      -- Latch selected destination register
+            ID_EX_Branch_reg         <= branch;                  -- Latch Branch signal
+            ID_EX_RegWrite_reg       <= reg_write_id;            -- Latch RegWrite signal
+            ID_EX_ALUSrc_reg         <= alu_src;                 -- Latch ALUSrc signal
+            ID_EX_MemRead_reg        <= mem_read;                -- Latch MemRead signal
+            ID_EX_MemWrite_reg       <= mem_write;               -- Latch MemWrite signal
+            ID_EX_MemtoReg_reg       <= mem_to_reg;              -- Latch MemtoReg signal
+            ID_EX_ALUOp_reg          <= alu_op;                  -- Latch ALUOp signal
+            ID_EX_reg_dst_bit        <= reg_dst_id;              -- Latch RegDst signal from intermediate signal
         end if;
     end process;
 
