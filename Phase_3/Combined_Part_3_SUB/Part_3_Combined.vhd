@@ -6,10 +6,11 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
+-- The full pipelined architecture with forwarding and hazard detection units implemented
 entity Part_3_Combined is
 	port(
-		clock	: in std_logic;
-		reset	: in std_logic
+		clock	: in std_logic;		-- The clock signal
+		reset	: in std_logic			-- The reset signal
 	);
 end Part_3_Combined;
 
@@ -54,57 +55,60 @@ architecture structure of Part_3_Combined is
 				reset				: in std_logic;										-- Reset Signal
 				
 				-- Inputs from ID stage via ID/EX pipeline register
-				PC_plus_4		: in std_logic_vector(31 downto 0);
-				read_data_1		: in std_logic_vector(31 downto 0);
-				read_data_2		: in std_logic_vector(31 downto 0);
-				sign_extended	: in std_logic_vector(31 downto 0);
-				rd_register		: in std_logic_vector(4 downto 0);
-				rt_register		: in std_logic_vector(4 downto 0);
-				rs_register		: in std_logic_vector(4 downto 0);
-				RegDst			: in std_logic;
-				Branch			: in std_logic;
-				RegWrite			: in std_logic;
-				ALUSrc			: in std_logic;
-				MemRead			: in std_logic;
-				MemWrite			: in std_logic;
-				MemtoReg			: in std_logic;
-				ALUOp				: in std_logic_vector(1 downto 0);
+				
+				-- Data
+				PC_plus_4		: in std_logic_vector(31 downto 0);				-- PC+4 Value from ID/EX Register	
+				read_data_1		: in std_logic_vector(31 downto 0);				-- Read Data 1 value from ID/EX Register
+				read_data_2		: in std_logic_vector(31 downto 0);				-- Read Data 2 value from ID/EX Register
+				sign_extended	: in std_logic_vector(31 downto 0);				-- Sign Extended value from ID/EX Register
+				rd_register		: in std_logic_vector(4 downto 0);				-- RD Register number from ID/EX Register
+				rt_register		: in std_logic_vector(4 downto 0);				-- RT Register number from ID/EX Register
+				rs_register		: in std_logic_vector(4 downto 0);				-- RS Register Number from ID/EX Register 
+				-- Control
+				RegDst			: in std_logic;										-- Register Destination control bit for Write Register Mux
+				Branch			: in std_logic;										-- Branch control bit for branch instructions
+				RegWrite			: in std_logic;										-- Register Write control bit for data right back
+				ALUSrc			: in std_logic;										-- ALU Source Control to select between Read data and sign extend
+				MemRead			: in std_logic;										-- Memory Read control bit for reading from memory
+				MemWrite			: in std_logic;										-- Memory Write bit for writing to memory
+				MemtoReg			: in std_logic;										-- Memory to Register control bit to select between memory and ALU for writeback 
+				ALUOp				: in std_logic_vector(1 downto 0);				-- ALU Operation Control bits to select ALU Operation type
 				
 				-- Outputs
-				branch_address	: out std_logic_vector(31 downto 0);
-				pc_select		: out std_logic;
-				write_register	: out std_logic_vector(4 downto 0);
-				write_data		: out	std_logic_vector(31 downto 0);
-				reg_write		: out std_logic;
+				branch_address	: out std_logic_vector(31 downto 0);			-- The address to branch to given a branch instruction
+				pc_select		: out std_logic;										-- Select bit to choose PC+4 or the branch address
+				write_register	: out std_logic_vector(4 downto 0);				-- The register number to write to if writing to register
+				write_data		: out	std_logic_vector(31 downto 0);			-- Data to write to register if writing to a register
+				reg_write		: out std_logic;										-- Register write control bit to enable writing to a register
 				
-				ID_EX_mem_read_ex		: out std_logic;
-				ID_EX_rt_register_ex	: out std_logic_vector(4 downto 0)
+				ID_EX_mem_read_ex		: out std_logic;								-- The Memory Read Control bit in the EX stage to be used in Hazard Detection
+				ID_EX_rt_register_ex	: out std_logic_vector(4 downto 0)		-- The RT Reguster in the EX stage to bee used in hazard detection
 		);
 	end component;
 	
 	-- Internal Signals
-	signal branch_address_sig	: std_logic_vector(31 downto 0);
-	signal pc_select_sig			: std_logic;
-	signal write_register_sig		: std_logic_vector(4 downto 0);
-	signal write_data_sig				:std_logic_vector(31 downto 0);
-	signal reg_write_sig				: std_logic;
-	signal mem_read_ex_sig			: std_logic;
-	signal write_reg_ex_sig				: std_logic_vector(4 downto 0);
-	signal PC_plus_4_sig				: std_logic_vector(31 downto 0);
-	signal read_data_1_sig			: std_logic_vector(31 downto 0);
-	signal read_data_2_sig			: std_logic_vector(31 downto 0);
-	signal sign_extended_sig		: std_logic_vector(31 downto 0);
-	signal rs_sig						: std_logic_vector(4 downto 0);
-	signal rt_sig						: std_logic_vector(4 downto 0);
-	signal rd_sig						: std_logic_vector(4 downto 0);
-	signal Branch_sig					: std_logic;
-	signal RegWrite_sig				: std_logic;
-	signal ALUSrc_sig					: std_logic;
-	signal MemRead_sig				: std_logic;
-	signal MemWrite_sig				: std_logic;
-	signal MemtoReg_sig				: std_logic;
-	signal ALUOp_sig					: std_logic_vector(1 downto 0);
-	signal reg_dst_sig				: std_logic;
+	signal branch_address_sig	: std_logic_vector(31 downto 0);			-- The next address given a branch instruction
+	signal pc_select_sig			: std_logic;									-- The select bit to choose between PC+4 and the branch address
+	signal write_register_sig		: std_logic_vector(4 downto 0);		-- The register number to write data to
+	signal write_data_sig				:std_logic_vector(31 downto 0);	-- The data to be written to a register
+	signal reg_write_sig				: std_logic;								-- The enable bit to enable writing data to a register
+	signal mem_read_ex_sig			: std_logic;								-- The Memory Read control bit in the EX stage
+	signal write_reg_ex_sig				: std_logic_vector(4 downto 0);	-- The RT Register number in the EX stage
+	signal PC_plus_4_sig				: std_logic_vector(31 downto 0);		-- The PC+4 value from the ID/EX Register
+	signal read_data_1_sig			: std_logic_vector(31 downto 0);		-- The Read Data 1 value from the ID/EX Register
+	signal read_data_2_sig			: std_logic_vector(31 downto 0);		-- The Read Data 2 value from the ID/EX Register
+	signal sign_extended_sig		: std_logic_vector(31 downto 0);		-- The sign Extended vakue from the ID/EX Register
+	signal rs_sig						: std_logic_vector(4 downto 0);		-- The RS Register number from the ID/EX Register
+	signal rt_sig						: std_logic_vector(4 downto 0);		-- The RT Register number from the ID/EX Register
+	signal rd_sig						: std_logic_vector(4 downto 0);		-- The RD Register number from the ID/EX Register
+	signal Branch_sig					: std_logic;								-- The Branch control bit from the ID/EX Register
+	signal RegWrite_sig				: std_logic;								-- The Register Write control bit from the ID/EX Register
+	signal ALUSrc_sig					: std_logic;								-- The ALU Source control bit from the ID/EX Register
+	signal MemRead_sig				: std_logic;								-- The Memory Read control bit from the ID/EX Register
+	signal MemWrite_sig				: std_logic;								-- The Memory Write control bit from the ID/EX Register
+	signal MemtoReg_sig				: std_logic;								-- The Memory to Register control bit from the ID/EX Register
+	signal ALUOp_sig					: std_logic_vector(1 downto 0);		-- The ALU Operation control bits from the ID/EX Register
+	signal reg_dst_sig				: std_logic;								-- The Register Destination control bit from the ID/EX Register
 	
 	
 	begin

@@ -1,17 +1,16 @@
 -- Design Phase 3 
--- Date: 4/27/2025
+-- Date: 4/25/2025
 -- Authors: Matthew Collins & Lewis Bates
 -- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
 
 library ieee;
 use ieee.std_logic_1164.all;
 
--- Control unit to determine the operation the ALU is to perform
 entity ALU_Control is
 	port(
-		ALU_Op			: in std_logic_vector(1 downto 0);	-- The operation type control input
-		instr_funct		: in std_logic_vector(5 downto 0);	-- The function bits of the instruction (Only used for R-type)
-		operation		: out std_logic_vector(3 downto 0)	-- The operation select bits for the ALU
+		ALU_Op			: in std_logic_vector(1 downto 0);
+		instr_funct		: in std_logic_vector(5 downto 0);
+		operation		: out std_logic_vector(3 downto 0)
 	);
 end ALU_Control;
 	

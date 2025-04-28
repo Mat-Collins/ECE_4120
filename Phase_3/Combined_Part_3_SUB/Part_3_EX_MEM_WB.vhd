@@ -1,43 +1,46 @@
 -- Design Phase 3 
--- Date: 4/26/2025
+-- Date: 4/27/2025
 -- Authors: Matthew Collins & Lewis Bates
 -- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
 
 library ieee;
 use ieee.std_logic_1164.all;
 
+-- The Execute, Memory, and Write Back stages of the pipelined architecture with forwarding
 entity Part_3_EX_MEM_WB is
 	port(
-		
-		clock				: in std_logic;
-		reset				: in std_logic;
+		clock				: in std_logic;										-- Clock Signal
+		reset				: in std_logic;										-- Reset Signal
 		
 		-- Inputs from ID stage via ID/EX pipeline register
-		PC_plus_4		: in std_logic_vector(31 downto 0);
-		read_data_1		: in std_logic_vector(31 downto 0);
-		read_data_2		: in std_logic_vector(31 downto 0);
-		sign_extended	: in std_logic_vector(31 downto 0);
-		rd_register		: in std_logic_vector(4 downto 0);
-		rt_register		: in std_logic_vector(4 downto 0);
-		rs_register		: in std_logic_vector(4 downto 0);
-		RegDst			: in std_logic;
-		Branch			: in std_logic;
-		RegWrite			: in std_logic;
-		ALUSrc			: in std_logic;
-		MemRead			: in std_logic;
-		MemWrite			: in std_logic;
-		MemtoReg			: in std_logic;
-		ALUOp				: in std_logic_vector(1 downto 0);
+		
+		-- Data
+		PC_plus_4		: in std_logic_vector(31 downto 0);				-- PC+4 Value from ID/EX Register	
+		read_data_1		: in std_logic_vector(31 downto 0);				-- Read Data 1 value from ID/EX Register
+		read_data_2		: in std_logic_vector(31 downto 0);				-- Read Data 2 value from ID/EX Register
+		sign_extended	: in std_logic_vector(31 downto 0);				-- Sign Extended value from ID/EX Register
+		rd_register		: in std_logic_vector(4 downto 0);				-- RD Register number from ID/EX Register
+		rt_register		: in std_logic_vector(4 downto 0);				-- RT Register number from ID/EX Register
+		rs_register		: in std_logic_vector(4 downto 0);				-- RS Register Number from ID/EX Register 
+		-- Control
+		RegDst			: in std_logic;										-- Register Destination control bit for Write Register Mux
+		Branch			: in std_logic;										-- Branch control bit for branch instructions
+		RegWrite			: in std_logic;										-- Register Write control bit for data right back
+		ALUSrc			: in std_logic;										-- ALU Source Control to select between Read data and sign extend
+		MemRead			: in std_logic;										-- Memory Read control bit for reading from memory
+		MemWrite			: in std_logic;										-- Memory Write bit for writing to memory
+		MemtoReg			: in std_logic;										-- Memory to Register control bit to select between memory and ALU for writeback 
+		ALUOp				: in std_logic_vector(1 downto 0);				-- ALU Operation Control bits to select ALU Operation type
 		
 		-- Outputs
-		branch_address	: out std_logic_vector(31 downto 0);
-		pc_select		: out std_logic;
-		write_register	: out std_logic_vector(4 downto 0);
-		write_data		: out	std_logic_vector(31 downto 0);
-		reg_write		: out std_logic;
+		branch_address	: out std_logic_vector(31 downto 0);			-- The address to branch to given a branch instruction
+		pc_select		: out std_logic;										-- Select bit to choose PC+4 or the branch address
+		write_register	: out std_logic_vector(4 downto 0);				-- The register number to write to if writing to register
+		write_data		: out	std_logic_vector(31 downto 0);			-- Data to write to register if writing to a register
+		reg_write		: out std_logic;										-- Register write control bit to enable writing to a register
 		
-		ID_EX_mem_read_ex		: out std_logic;
-		ID_EX_rt_register_ex	: out std_logic_vector(4 downto 0)
+		ID_EX_mem_read_ex		: out std_logic;								-- The Memory Read Control bit in the EX stage to be used in Hazard Detection
+		ID_EX_rt_register_ex	: out std_logic_vector(4 downto 0)		-- The RT Reguster in the EX stage to bee used in hazard detection
 	);
 end Part_3_EX_MEM_WB;
 
@@ -56,9 +59,9 @@ architecture structure of Part_3_EX_MEM_WB is
 	
 	component ALU_Control is
 		port(
-			ALU_Op			: in std_logic_vector(1 downto 0);
-			instr_funct		: in std_logic_vector(5 downto 0);
-			operation		: out std_logic_vector(3 downto 0)
+			ALU_Op			: in std_logic_vector(1 downto 0);	-- The operation type control input
+			instr_funct		: in std_logic_vector(5 downto 0);	-- The function bits of the instruction (Only used for R-type)
+			operation		: out std_logic_vector(3 downto 0)	-- The operation select bits for the ALU
 		);
 	end component;
 	
@@ -72,64 +75,64 @@ architecture structure of Part_3_EX_MEM_WB is
 	
 	component memory_1 is
 		port(
-			address : in std_logic_vector(7 downto 0);
+			address : in std_logic_vector(7 downto 0);		-- The address to to be accessed for reading or writing
 			clock		: in std_logic;
-			data		: in std_logic_vector(31 downto 0);
-			wren		: in std_logic;
-			q			: out std_logic_vector(31 downto 0)
+			data		: in std_logic_vector(31 downto 0);		-- The data to be written
+			wren		: in std_logic;								-- The write enable bit
+			q			: out std_logic_vector(31 downto 0)		-- The value stored at the inputted address
 		);
 	end component;
 	
 	component Two_Input_Mux is
 		generic(n : integer := 32); 
 		 port (
-			  Input0, Input1 : in  std_logic_vector(n-1 downto 0);  -- Two (n-1)-bit inputs
-			  Sel            : in  std_logic;                      -- 1-bit select signal
-			  Output         : out std_logic_vector(n-1 downto 0)   -- (n-1)-bit output
+			  Input0, Input1 : in  std_logic_vector(n-1 downto 0);  	-- Two (n-1)-bit inputs
+			  Sel            : in  std_logic;                      	-- 1-bit select signal
+			  Output         : out std_logic_vector(n-1 downto 0)   	-- (n-1)-bit output
 		 );
 	end component;
 	
 	component shift_left_by_2 is
 		generic(n : integer := 32);
 		port(
-			input 	: in std_logic_vector(n-1 downto 0);
-			output 	: out std_logic_vector(n-1 downto 0)
+			input 	: in std_logic_vector(n-1 downto 0);	-- Unshifted input
+			output 	: out std_logic_vector(n-1 downto 0)	-- Input value shifted to the left by two bits
 		);
 	end component;
 	
 	component register_N is
 		 GENERIC (N : INTEGER := 32);
 		 PORT (
-			  D       : IN  STD_LOGIC_VECTOR (N-1 DOWNTO 0);
-			  enable  : IN  STD_LOGIC;
-			  Resetn  : IN  STD_LOGIC;
-			  Clock   : IN  STD_LOGIC;
-			  Q       : OUT STD_LOGIC_VECTOR (N-1 DOWNTO 0)
+			  D       : IN  STD_LOGIC_VECTOR (N-1 DOWNTO 0);	-- Input value to be loaded
+			  enable  : IN  STD_LOGIC;									-- Register enable
+			  Resetn  : IN  STD_LOGIC;									-- Active-low reset
+			  Clock   : IN  STD_LOGIC;									-- Clock signal
+			  Q       : OUT STD_LOGIC_VECTOR (N-1 DOWNTO 0)		-- Register output (stored value)
 		 );
 	end component;
 	
 	component Four_Input_Mux is
 		generic(n : integer := 32);
 		port(
-			Input0 	: in std_logic_vector(n-1 downto 0);
-			Input1 	: in std_logic_vector(n-1 downto 0);
-			Input2 	: in std_logic_vector(n-1 downto 0);
-			Input3 	: in std_logic_vector(n-1 downto 0);
-			Sel		: in std_logic_vector(1 downto 0);
-			Output	: out std_logic_vector(n-1 downto 0)
+			Input0 	: in std_logic_vector(n-1 downto 0);	-- Input0 of Mux
+			Input1 	: in std_logic_vector(n-1 downto 0);	-- Inout1 of Mux
+			Input2 	: in std_logic_vector(n-1 downto 0);	-- Input2 of Mux
+			Input3 	: in std_logic_vector(n-1 downto 0);	-- Input3 of Mux
+			Sel		: in std_logic_vector(1 downto 0);		-- Select line or the Mux
+			Output	: out std_logic_vector(n-1 downto 0)	-- The Output of the Mux
 		);
 	end component;
 	
 	component forward_unit is
 		port(
-			ID_EX_rs_register		: in std_logic_vector(4 downto 0);
-			ID_EX_rt_register		: in std_logic_vector(4 downto 0);
-			EX_MEM_RegWrite		: in std_logic;
-			MEM_WB_RegWrite		: in std_logic;
-			EX_MEM_rd_register	: in std_logic_vector(4 downto 0);
-			MEM_WB_rd_register	: in std_logic_vector(4 downto 0);
-			Forward_A				: out std_logic_vector(1 downto 0);
-			Forward_B				: out std_logic_vector(1 downto 0)
+			ID_EX_rs_register		: in std_logic_vector(4 downto 0);	-- The RS Register number from the ID/EX Register
+			ID_EX_rt_register		: in std_logic_vector(4 downto 0);	-- The RT Register number from the ID/EX Register
+			EX_MEM_RegWrite		: in std_logic;							-- The Register Write control bit from the EX/MEM Register
+			MEM_WB_RegWrite		: in std_logic;							-- The Register Write control bit from the MEM/WB Register 
+			EX_MEM_rd_register	: in std_logic_vector(4 downto 0);	-- The RD Register number from the EX/MEM Register
+			MEM_WB_rd_register	: in std_logic_vector(4 downto 0);	-- The RD Register number from the MEM/WB Register
+			Forward_A				: out std_logic_vector(1 downto 0);	-- The control bits for the RS Forwarding Mux
+			Forward_B				: out std_logic_vector(1 downto 0)	-- The control bits for the RT Forwarding Mux 
 		);
 	end component;
 	
