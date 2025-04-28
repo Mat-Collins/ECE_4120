@@ -2,7 +2,7 @@
 -- Implements the Instruction Fetch (IF) and Instruction Decode (ID) blocks of a Simple Pipelined Architecture.
 
 -- Design Phase 3
--- Date: 4/25/2025
+-- Date: 4/27/2025
 -- Authors: Matthew Collins & Lewis Bates
 -- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
 
