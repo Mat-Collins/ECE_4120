@@ -2,33 +2,11 @@
 # Compile of ALU_Control.vhd was successful.
 # Compile of ALU_Mux.vhd was successful.
 # Compile of control_unit.vhd was successful.
-# Compile of decoder.vhd failed with 3 errors.
-# Compile of generic_adder.vhd was successful.
-# Compile of memory_1.vhd was successful.
-# Compile of Part_1_Combined.vhd failed with 3 errors.
-# Compile of Part_1_Combined_tb.vhd was successful with warnings.
-# Compile of Part_1_EX_MEM_WB.vhd was successful.
-# Compile of Part_1_IF_ID.vhd was successful.
-# Compile of PC.vhd was successful.
-# Compile of pc_adder.vhd was successful.
-# Compile of reg_read_unit.vhd failed with 3 errors.
-# Compile of reg_write_unit.vhd failed with 3 errors.
-# Compile of register_file.vhd failed with 3 errors.
-# Compile of register_N.vhd was successful.
-# Compile of shift_left_by_2.vhd was successful.
-# Compile of SignExtend.vhd was successful.
-# Compile of Two_Input_Mux.vhd was successful.
-# Compile of type_def.vhd was successful.
-# 21 compiles, 5 failed with 15 errors.
-# Compile of ALU.vhd was successful.
-# Compile of ALU_Control.vhd was successful.
-# Compile of ALU_Mux.vhd was successful.
-# Compile of control_unit.vhd was successful.
 # Compile of decoder.vhd was successful.
 # Compile of generic_adder.vhd was successful.
 # Compile of memory_1.vhd was successful.
 # Compile of Part_1_Combined.vhd was successful.
-# Compile of Part_1_Combined_tb.vhd was successful with warnings.
+# Compile of Part_1_Combined_TB.vhd was successful with warnings.
 # Compile of Part_1_EX_MEM_WB.vhd was successful.
 # Compile of Part_1_IF_ID.vhd was successful.
 # Compile of PC.vhd was successful.
@@ -44,7 +22,7 @@
 # 21 compiles, 0 failed with no errors.
 vsim -gui work.part_1_combined_tb
 # vsim -gui work.part_1_combined_tb 
-# Start time: 13:02:15 on Apr 29,2025
+# Start time: 15:40:04 on Apr 29,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -75,13 +53,6 @@ vsim -gui work.part_1_combined_tb
 # Loading work.alu(behavioral)
 # Loading work.shift_left_by_2(behavior)
 # Loading work.generic_adder(behavioral)
-# Trace back: Error QStructure::sort: invalid command name ""
-#   <6:C:/mtitcl/vsim/qstructure.tc_:2478: ::QStructure::sort .main_pane.structure 0 ascending
-#   <5:eval:1: ::QStructure::structsort .main_pane.structure 0 ascending
-#   <4:eval:1: ::namespace inscope ::QStructure {structsort .main_pane.structure} 0 ascending
-#   >3:proc:26: ::.main_pane.structure.interior.cs.body.struct sort 0 ascending
-#   >2:proc:10: ::.main_pane.structure.interior.cs.body.struct _initializeSortColumn
-#   <1:eval:1: ::namespace inscope ::vsimwidgets::Hierarchy {::.main_pane.structure.interior.cs.body.struct _initializeSortColumn}
 add wave -position end  sim:/part_1_combined_tb/clock
 add wave -position end  sim:/part_1_combined_tb/reset
 add wave -position end  sim:/part_1_combined_tb/Instruction_input
@@ -96,12 +67,7 @@ add wave -position end  sim:/part_1_combined_tb/Data_memory_out
 add wave -position end  sim:/part_1_combined_tb/Write_back_data
 add wave -position end  sim:/part_1_combined_tb/Write_back_register
 add wave -position end  sim:/part_1_combined_tb/PC_Select
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /part_1_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -124,5 +90,6 @@ run
 #    Time: 0 ps  Iteration: 1  Instance: /part_1_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 2  Instance: /part_1_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
-# End time: 13:22:11 on Apr 29,2025, Elapsed time: 0:19:56
-# Errors: 0, Warnings: 12
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ModelSim/wave.do
+# End time: 15:49:42 on Apr 29,2025, Elapsed time: 0:09:38
+# Errors: 0, Warnings: 16
