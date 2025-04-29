@@ -1,5 +1,5 @@
 -- Design Phase 3 
--- Date: 4/27/2025
+-- Date: 4/29/2025
 -- Authors: Matthew Collins & Lewis Bates
 -- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
 
@@ -34,7 +34,11 @@ entity Part_2_EX_MEM_WB is
 		pc_select		: out std_logic;								-- The PC Select bit to choose between PC+4c and the branch address
 		write_register	: out std_logic_vector(4 downto 0);		-- The register to write data to
 		write_data		: out	std_logic_vector(31 downto 0);	-- The data to write to a register
-		reg_write		: out std_logic								-- The enable bit to enable writing to a register
+		reg_write		: out std_logic;								-- The enable bit to enable writing to a register
+		
+		-- Inputs and Outputs for the Testbench
+		EX_MEM_ALU_out	  	 		: out std_logic_vector(31 downto 0);	-- The ALU output in the MEM stage
+		MEM_WB_Data_mem_out		: out std_logic_vector(31 downto 0)	-- The Data Memory output in the WB stage
 	);
 end Part_2_EX_MEM_WB;
 
@@ -201,6 +205,7 @@ architecture structure of Part_2_EX_MEM_WB is
 											 
 		branch_address <= EX_MEM_reg_out(101 downto 70);
 		pc_select <= EX_MEM_reg_out(102) and EX_MEM_reg_out(69);	-- Branch AND ALU_Zero
+		EX_MEM_ALU_out <= EX_MEM_reg_out(68 downto 37);	-- ALU output in the MEM stage
 		
 		data_memory: memory_1 port map(
 											address 	=> EX_MEM_reg_out(44 downto 37), -- ALU Output
@@ -228,6 +233,7 @@ architecture structure of Part_2_EX_MEM_WB is
 											 
 		reg_write <= MEM_WB_reg_out(69); -- RegWrite
 		write_register <= MEM_WB_reg_out(4 downto 0); -- Write Register
+		MEM_WB_data_mem_out <= MEM_WB_reg_out(68 downto 37);
 		
 		write_back_mux: Two_Input_Mux generic map(32)
 												port map(

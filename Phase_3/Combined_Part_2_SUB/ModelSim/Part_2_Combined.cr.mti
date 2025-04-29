@@ -1,0 +1,223 @@
+C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Part_2_Combined_tb
+-- Compiling architecture testbench of Part_2_Combined_tb
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(81): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(83): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(98): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(100): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(105): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(107): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(112): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(114): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(119): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(121): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(126): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(128): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(135): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(137): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(142): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(144): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(149): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(151): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(156): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(158): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(163): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(165): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(172): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(174): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(179): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(181): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(186): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(188): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(193): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(195): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(200): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(202): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(207): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(209): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(222): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(224): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(227): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(229): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(233): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(235): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(240): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined_TB.vhd(242): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/decoder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/decoder.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package type_def
+-- Compiling entity decoder
+-- Compiling architecture behavior of decoder
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/reg_write_unit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/reg_write_unit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package type_def
+-- Compiling entity reg_write_unit
+-- Compiling architecture behavior of reg_write_unit
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_Combined.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Part_2_Combined
+-- Compiling architecture structural of Part_2_Combined
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/reg_read_unit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/reg_read_unit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package type_def
+-- Compiling entity reg_read_unit
+-- Compiling architecture behavior of reg_read_unit
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/control_unit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/control_unit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity control_unit
+-- Compiling architecture behavioral of control_unit
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/ALU.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/ALU.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ALU
+-- Compiling architecture Behavioral of ALU
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_IF_ID.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_IF_ID.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package type_def
+-- Compiling entity Part_2_IF_ID
+-- Compiling architecture Behavioral of Part_2_IF_ID
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/register_file.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/register_file.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package type_def
+-- Compiling entity register_file
+-- Compiling architecture behavior of register_file
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/generic_adder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/generic_adder.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity generic_adder
+-- Compiling architecture behavioral of generic_adder
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/type_def.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/type_def.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package type_def
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/SignExtend.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/SignExtend.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity SignExtend
+-- Compiling architecture Behavioral of SignExtend
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/memory_1.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/memory_1.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package altera_mf_components
+-- Compiling entity memory_1
+-- Compiling architecture SYN of memory_1
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Two_Input_Mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Two_Input_Mux.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Two_Input_Mux
+-- Compiling architecture Behavioral of Two_Input_Mux
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/register_N.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/register_N.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity register_N
+-- Compiling architecture behavioral of register_N
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/pc_adder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/pc_adder.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity pc_adder
+-- Compiling architecture behavioral of pc_adder
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/ALU_Control.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/ALU_Control.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ALU_Control
+-- Compiling architecture behavior of ALU_Control
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_EX_MEM_WB.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/Part_2_EX_MEM_WB.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Part_2_EX_MEM_WB
+-- Compiling architecture structure of Part_2_EX_MEM_WB
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/shift_left_by_2.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/shift_left_by_2.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity shift_left_by_2
+-- Compiling architecture behavior of shift_left_by_2
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/ALU_Mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/ALU_Mux.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ALU_Mux
+-- Compiling architecture Behavioral of ALU_Mux
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/PC.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/PC.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity PC
+-- Compiling architecture behavioral of PC
+
+} {} {}}

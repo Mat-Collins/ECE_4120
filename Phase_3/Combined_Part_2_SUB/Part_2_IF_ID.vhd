@@ -2,7 +2,7 @@
 -- Implements the Instruction Fetch (IF) and Instruction Decode (ID) blocks of a Simple Pipelined Architecture.
 
 -- Design Phase 3
--- Date: 4/27/2025
+-- Date: 4/29/2025
 -- Authors: Matthew Collins & Lewis Bates
 -- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
 
@@ -37,7 +37,12 @@ entity Part_2_IF_ID is
         ID_EX_MemRead       : out std_logic;                     -- Memory read enable signal
         ID_EX_MemWrite      : out std_logic;                     -- Memory write enable signal
         ID_EX_MemtoReg      : out std_logic;                     -- Memory-to-register control signal
-        ID_EX_ALUOp         : out std_logic_vector(1 downto 0)   -- ALU operation control signals
+        ID_EX_ALUOp         : out std_logic_vector(1 downto 0);  -- ALU operation control signals
+		  
+		  -- Inputs and Outputs for the Testbench
+		  Instr_input			 : in std_logic_vector(31 downto 0);  -- The input to store data in the instruction memory
+		  Instr_wren		    : in std_logic;							  -- The instruction memory write enable						
+		  IF_ID_Instr_out	    : out std_logic_vector(31 downto 0)  -- Instruction currently in the ID stage
     );
 end Part_2_IF_ID;
 
@@ -187,8 +192,8 @@ begin
     instr_mem_inst : memory_1 port map(
         address => pc_current(7 downto 0), -- Use lower 8 bits of PC as address
         clock   => clk,                   -- Connect to system clock
-        data    => (others => '0'),       -- No write data (read-only)
-        wren    => '0',                   -- Disable writing (read-only)
+        data    => Instr_input,				-- Instruction input
+        wren    => Instr_wren,				-- Instruction Memory write enable
         q       => instruction            -- Output fetched instruction
     );
 
@@ -289,6 +294,7 @@ begin
 
     -- Output Assignments
     -- Connect internal ID/EX register signals to entity output ports
+	 IF_ID_instr_out		 <= IF_ID_Instruction;		  -- Output for Testbench
     ID_EX_PC_plus_4      <= ID_EX_PC_plus_4_reg;     -- Output PC+4 to EX stage
     ID_EX_rd_read_data   <= ID_EX_rd_read_data_reg;  -- Output rs data to EX stage
     ID_EX_rt_read_data   <= ID_EX_rt_read_data_reg;  -- Output rt data to EX stage

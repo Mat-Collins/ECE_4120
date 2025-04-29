@@ -3,7 +3,7 @@
 -- Implements a simple pipelined architecture without forwarding or hazard units, supporting instructions like beq, add, sw, and or.
 -- Authors: Matthew Collins & Lewis Bates
 -- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
--- Date: April 26, 2025
+-- Date: April 29, 2025
 
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -11,8 +11,21 @@ use IEEE.std_logic_1164.all;
 -- Entity declaration for the top-level combined module
 entity Part_2_Combined is
     port (
-        clk   : in std_logic;  -- Clock signal for synchronous operations across all pipeline stages
-        reset : in std_logic   -- Reset signal to initialize all registers and stages to a known state
+        clock   : in std_logic;  -- Clock signal for synchronous operations across all pipeline stages
+        reset : in std_logic;   -- Reset signal to initialize all registers and stages to a known state
+		  
+		  Instruction_input				: in std_logic_vector(31 downto 0); 	-- The input to store data in the instruction memory
+		  Instruction_wren				: in std_logic;								-- The instruction memory write enable						
+		  IF_ID_Instruction				: out std_logic_vector(31 downto 0); 	-- Instruction currently in the ID stage
+		  ID_EX_Read_data_1				: out std_logic_vector(31 downto 0); 	-- The Read Data 1 value in the EX stage
+		  ID_EX_Read_data_2				: out std_logic_vector(31 downto 0); 	-- The Read Data 2 value in the EX stage
+		  ID_EX_Sign_extend				: out std_logic_vector(31 downto 0);	-- The Sign Extend value in the EX stage
+		  EX_MEM_Branch_address			: out std_logic_vector(31 downto 0);	-- The Branch Address value in the MEM stage
+		  EX_MEM_ALU_output				: out std_logic_vector(31 downto 0);	-- The ALU output in the MEM stage
+		  MEM_PC_Select					: out std_logic;								-- The PCSrc control bit in the MEM stage
+		  MEM_WB_Data_memory_out		: out std_logic_vector(31 downto 0);	-- The Data Memory output in the WB stage
+		  WB_Write_back_data				: out std_logic_vector(31 downto 0);	-- The write back data in the WB stage
+		  WB_Write_back_register		: out std_logic_vector(4 downto 0)		-- The write back register in the WB stage
     );
 end Part_2_Combined;
 
@@ -42,7 +55,11 @@ architecture structural of Part_2_Combined is
             ID_EX_MemRead       : out std_logic;                      -- Control signal to enable memory read in MEM
             ID_EX_MemWrite      : out std_logic;                      -- Control signal to enable memory write in MEM
             ID_EX_MemtoReg      : out std_logic;                      -- Control signal to select write-back source
-            ID_EX_ALUOp         : out std_logic_vector(1 downto 0)    -- Control signal defining ALU operation
+            ID_EX_ALUOp         : out std_logic_vector(1 downto 0);   -- Control signal defining ALU operation
+				-- Inputs and Outputs for the Testbench
+				Instr_input			  : in std_logic_vector(31 downto 0); 	 -- The input to store data in the instruction memory
+				Instr_wren		     : in std_logic;								 -- The instruction memory write enable						
+				IF_ID_Instr_out	  : out std_logic_vector(31 downto 0)   -- Instruction currently in the ID stage
         );
     end component;
 
@@ -70,7 +87,10 @@ architecture structural of Part_2_Combined is
             pc_select          : out std_logic;                      -- Signal to select PC source to IF stage
             write_register     : out std_logic_vector(4 downto 0);   -- Register address for write-back to IF stage
             write_data         : out std_logic_vector(31 downto 0);  -- Data for write-back to IF stage
-            reg_write          : out std_logic                       -- Enable signal for register write to IF stage
+            reg_write          : out std_logic;                      -- Enable signal for register write to IF stage
+				-- Inputs and Outputs for the Testbench
+				EX_MEM_ALU_out	  	 		: out std_logic_vector(31 downto 0);	-- The ALU output in the MEM stage
+				MEM_WB_Data_mem_out		: out std_logic_vector(31 downto 0)  	-- The Data Memory output in the WB stage
         );
     end component;
 
@@ -103,7 +123,7 @@ begin
     -- Connects Instruction Fetch and Decode stages to the pipeline
     IF_ID_inst : Part_2_IF_ID
         port map (
-            clk                 => clk,                      -- System clock input
+            clk                 => clock,                    -- System clock input
             reset               => reset,                    -- System reset input
             branch_address      => branch_address_from_EX,   -- Feedback: branch address from EX stage
             pc_select           => pc_select_from_EX,        -- Feedback: PC select signal from EX stage
@@ -124,14 +144,18 @@ begin
             ID_EX_MemRead       => ID_EX_MemRead,            -- Output: MemRead control to EX
             ID_EX_MemWrite      => ID_EX_MemWrite,           -- Output: MemWrite control to EX
             ID_EX_MemtoReg      => ID_EX_MemtoReg,           -- Output: MemtoReg control to EX
-            ID_EX_ALUOp         => ID_EX_ALUOp               -- Output: ALUOp control to EX
+            ID_EX_ALUOp         => ID_EX_ALUOp,              -- Output: ALUOp control to EX
+				-- Inputs and Outputs for the Testbench
+				Instr_input			  => Instruction_input,			 -- Input: Testbench	
+				Instr_wren			  => Instruction_wren,			 -- Input: Testbench
+				IF_ID_Instr_out	  => IF_ID_Instruction			 -- Output: Testbench
         );
 
     -- EX_MEM_WB Block Instantiation
     -- Connects Execute, Memory, and Write-Back stages to complete the pipeline
     EX_MEM_WB_inst : Part_2_EX_MEM_WB
         port map (
-            clock              => clk,                      -- System clock input
+            clock              => clock,                      -- System clock input
             reset              => reset,                    -- System reset input
             PC_plus_4          => ID_EX_PC_plus_4,          -- Input: PC+4 from IF/ID stage
             read_data_1        => ID_EX_rd_read_data,       -- Input: rd data from IF/ID stage
@@ -151,7 +175,19 @@ begin
             pc_select          => pc_select_from_EX,        -- Output: PC select signal to IF stage
             write_register     => write_register_from_WB,   -- Output: write register to IF stage
             write_data         => write_data_from_WB,       -- Output: write data to IF stage
-            reg_write          => reg_write_from_WB         -- Output: register write enable to IF stage
+            reg_write          => reg_write_from_WB,         -- Output: register write enable to IF stage
+				-- Inputs and Outputs for the Testbench
+				EX_MEM_ALU_out	  	 	=> EX_MEM_ALU_output,		-- Outout: Testbench
+				MEM_WB_Data_mem_out	=> MEM_WB_Data_memory_out	-- Output: Testbench
         );
-
+		  
+	  -- Outputs for the Testbench	
+	  ID_EX_Read_data_1			<= ID_EX_rd_read_data;
+	  ID_EX_Read_data_2			<= ID_EX_rt_read_data;
+	  ID_EX_Sign_extend			<= ID_EX_sign_extended;
+	  EX_MEM_Branch_address		<= branch_address_from_EX;
+	  MEM_PC_Select				<= pc_select_from_EX;
+	  WB_Write_back_data			<= write_data_from_WB;
+	  WB_Write_back_register	<= write_register_from_wb;
+	  
 end structural;
