@@ -93,18 +93,148 @@ architecture testbench of Part_1_Combined_tb is
 			-- Set up Instructtions
 			
 			-- 1. addi $t1, $zero, 1
+			Instruction_input <= "00100000000010010000000000000001";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
 			-- 2. addi $t2, $zero, 2
+			Instruction_input <= "00100000000010100000000000000010";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
 			-- 3. addi $t3, $zero, 3
+			Instruction_input <= "00100000000010110000000000000011";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
 			-- 4. addi $t4, $zero, 4
+			Instruction_input <= "00100000000011000000000000000100";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
 			
 			-- Test Instructions
 			
 			-- 5. beq $t1, $t2, Equal
+			Instruction_input <= "00010001001010100000000000000011";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
 			-- 6. add $t1, $t1, $t2
+			Instruction_input <= "00000001001010100100100000100000";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
 			-- 7. sw $t3, 100($t2)
+			Instruction_input <= "10101101010010110000000001100100";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
 			-- 8. or $t1, $t4, $t2
+			Instruction_input <= "00000001100010100100100000100101";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
 			-- 9. Equal
+			Instruction_input <= (others => '0');
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
 			
 			-- Confirmation Instructions
 			
-			-- 10. lw 
+			-- 12. lw $t5, 100($t2)
+			Instruction_input <= "10001101010011010000000001100100";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+
+			-- 13. nop $zero, $t1, $t1
+			Instruction_input <= "11111101001010010000000000111111";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
+			-- 14. nop $zero, $t2, $t2
+			Instruction_input <= "11111101010010100000000000111111";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
+			-- 15. nop $zero, $t3, $t3
+			Instruction_input <= "11111101011010110000000000111111";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
+			-- 16. nop $zero, $t4, $t4
+			Instruction_input <= "11111101100011000000000000111111";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
+			-- 17. nop $zero, $t5, $t5
+			Instruction_input <= "11111101101011010000000000111111";
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
+			
+			-- ------------------------
+			-- EXECUTE THE INSTRUCTIONS
+			-- ------------------------
+			
+			-- Disable Writing
+			Instruction_wren 	<= '0';
+			Instruction_input	<= (others => '0');
+			
+			-- Align the first instruction
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
+			clock <= '0';
+			wait for 5ns;
+			clock <= '1';
+			wait for 5ns;
+			
+			-- Reset the Pipeline
+			reset <= '0';
+			wait for 5ns;
+			reset <= '1';
+			wait for 5ns;
+			
+			-- Execute all the instructions
+			for i in 1 to 27 loop
+				clock <= '0';
+				wait for 5ns;
+				clock <= '1';
+				wait for 5ns;
+			end loop;
+			
+			wait;
+	end process;
+end architecture;
