@@ -225,6 +225,10 @@ architecture testbench of Part_3_Combined_tb is
 			-- EXECUTE THE INSTRUCTIONS
 			-- ------------------------
 			
+			-- Disable Writing
+			instr_mem_wren 	<= '0';
+			instr_input			<= (others => '0');
+			
 			-- Align the first instruction
 			clock <= '0';
 			wait for 5ns;
@@ -235,20 +239,6 @@ architecture testbench of Part_3_Combined_tb is
 			wait for 5ns;
 			clock <= '1';
 			wait for 5ns;
-			
-			clock <= '0';
-			wait for 5ns;
-			clock <= '1';
-			wait for 5ns;
-			
-			clock <= '0';
-			wait for 5ns;
-			clock <= '1';
-			wait for 5ns;
-			
-			-- Disable Writing
-			instr_mem_wren 	<= '0';
-			instr_input			<= (others => '0');
 			
 			-- Reset the Pipeline
 			reset <= '0';
