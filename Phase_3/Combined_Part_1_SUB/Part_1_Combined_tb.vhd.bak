@@ -1,0 +1,32 @@
+-- Design Phase 3
+-- Date: 4/29/2025
+-- Authors: Matthew Collins & Lewis Bates
+-- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Part_1_Combined_tb is
+end Part_1_Combined_tb;
+
+architecture testbench of Part_1_Combined_tb is
+
+	component Part_1_Combined is
+		port (
+			  clock      : in  std_logic;                      -- Single clock source for all clocked components
+			  reset      : in  std_logic;                      -- Synchronous reset signal
+			
+			  Instruction_input	: in std_logic_vector(31 downto 0); -- The input to store data in the instruction memory
+			  Instruction_wren	: in std_logic;							-- The instruction memory write enable
+			  Instruction_out		: out std_logic_vector(31 downto 0); -- The instruction currently being executed
+			  Read_data_1			: out std_logic_vector(31 downto 0); -- The register data associated with the RS register number
+			  Read_data_2			: out std_logic_vector(31 downto 0); -- The register data associated with the RT register number
+			  Sign_extend			: out std_logic_vector(31 downto 0); -- The output of the sign extend
+			  Branch_address		: out std_logic_vector(31 downto 0); -- The next address given a branch condition
+			  ALU_output			: out std_logic_vector(31 downto 0); -- The output of the ALU
+			  Data_memory_out		: out std_logic_vector(31 downto 0); -- The output of the data memory
+			  Write_back_data		: out std_logic_vector(31 downto 0); -- The data to be written back into a register
+			  Write_back_register: out std_logic_vector(4 downto 0);  -- The register number to write data back to
+			  PC_Select				: out std_logic							 -- The bit that seelects the branch address given a branch condition 
+		 );
+	end component;

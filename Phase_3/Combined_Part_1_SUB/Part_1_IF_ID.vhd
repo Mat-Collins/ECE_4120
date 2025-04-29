@@ -2,7 +2,7 @@
 -- Implements the IF and ID blocks of a single-cycle processor
 
 -- Design Phase 3
--- Date: 4/25/2025
+-- Date: 4/29/2025
 -- Authors: Matthew Collins & Lewis Bates
 -- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
 
@@ -16,6 +16,9 @@ entity Part_1_IF_ID is
         reset       : in  std_logic;                      -- Reset signal (active low)
         next_PC     : in  std_logic_vector(31 downto 0);  -- Next PC value from EX (Mux 4 output)
         write_data  : in  std_logic_vector(31 downto 0);  -- Write data from WB (Mux 3 output)
+		  -- Inputs for testbench
+		  instr_input : in  std_logic_vector(31 downto 0);	 -- The instruction to be loaded into the instruction memory
+		  instr_wren  : in  std_logic;							 -- The write enable bit for the instruction memory
 
         -- Outputs
         PC_plus_4   : out std_logic_vector(31 downto 0);  -- PC + 4 for EX (branch calculation)
@@ -29,7 +32,9 @@ entity Part_1_IF_ID is
         MemWrite    : out std_logic;                      -- Control signal for MEM (memory write)
         MemtoReg    : out std_logic;                      -- Control signal for WB (Mux 3 select)
         instruction : out std_logic_vector(31 downto 0);  -- Fetched instruction (for debugging)
-		  instr_funct : out std_logic_vector(5 downto 0)	 -- required for the instruction’s function code for R-type instructions
+		  instr_funct : out std_logic_vector(5 downto 0);	 -- required for the instruction’s function code for R-type instructions
+		  -- Outputs for Testbench
+		  Write_Back_reg	: out std_logic_vector(4 downto 0)	-- The register number to write data back to
     );
 end Part_1_IF_ID;
 
@@ -119,8 +124,8 @@ begin
         port map (
             address => pc_current(7 downto 0),  -- Using lower 8 bits (adjust if needed)
             clock   => clock,
-            data    => (others => '0'),         -- No write during execution
-            wren    => '0',                     -- Read-only during operation
+            data    => instr_input,					-- The data input for the memory
+            wren    => instr_wren,  				-- The instruction memory write enable
             q       => instr_internal
         );
 
@@ -171,5 +176,7 @@ begin
     -- Output the fetched instruction for debugging
     instruction <= instr_internal;
 	 instr_funct <= instr_internal(5 downto 0);
+	 -- Outputs used for the testbench
+	 Write_Back_reg <= write_reg;
 
 end structural;

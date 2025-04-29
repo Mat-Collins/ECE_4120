@@ -1,5 +1,5 @@
 -- Design Phase 3
--- Date: 4/28/2025
+-- Date: 4/29/2025
 -- Authors: Matthew Collins & Lewis Bates
 -- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
 --
@@ -16,9 +16,19 @@ entity Part_1_Combined is
     port (
         clock      : in  std_logic;                      -- Single clock source for all clocked components
         reset      : in  std_logic;                      -- Synchronous reset signal
-        next_PC    : out std_logic_vector(31 downto 0);  -- Next program counter value for verification
-        write_data : out std_logic_vector(31 downto 0);  -- Data written back to register file for verification
-        Read_data  : out std_logic_vector(31 downto 0)   -- Data read from data memory for verification
+		
+		  Instruction_input	: in std_logic_vector(31 downto 0); -- The input to store data in the instruction memory
+		  Instruction_wren	: in std_logic;							-- The instruction memory write enable
+		  Instruction_out		: out std_logic_vector(31 downto 0); -- The instruction currently being executed
+		  Read_data_1			: out std_logic_vector(31 downto 0); -- The register data associated with the RS register number
+		  Read_data_2			: out std_logic_vector(31 downto 0); -- The register data associated with the RT register number
+		  Sign_extend			: out std_logic_vector(31 downto 0); -- The output of the sign extend
+		  Branch_address		: out std_logic_vector(31 downto 0); -- The next address given a branch condition
+		  ALU_output			: out std_logic_vector(31 downto 0); -- The output of the ALU
+		  Data_memory_out		: out std_logic_vector(31 downto 0); -- The output of the data memory
+		  Write_back_data		: out std_logic_vector(31 downto 0); -- The data to be written back into a register
+		  Write_back_register: out std_logic_vector(4 downto 0);  -- The register number to write data back to
+		  PC_Select				: out std_logic							 -- The bit that seelects the branch address given a branch condition 
     );
 end Part_1_Combined;
 
@@ -43,7 +53,11 @@ architecture structural of Part_1_Combined is
             MemWrite      : out std_logic;                      -- Memory write control to MEM
             MemtoReg      : out std_logic;                      -- Write-back control to WB
             instruction   : out std_logic_vector(31 downto 0);  -- Fetched instruction (optional)
-            instr_funct   : out std_logic_vector(5 downto 0)    -- Function code to EX for ALU control
+            instr_funct   : out std_logic_vector(5 downto 0);   -- Function code to EX for ALU control
+				-- Inputs and Outputs for the testbench
+				instr_input 	: in  std_logic_vector(31 downto 0); -- The instruction to be loaded into the instruction memory
+				instr_wren  	: in  std_logic;							 -- The write enable bit for the instruction memory
+				Write_Back_reg	: out std_logic_vector(4 downto 0)	 -- The register number to write data back to
         );
     end component;
 
@@ -64,7 +78,11 @@ architecture structural of Part_1_Combined is
             instr_funct   : in  std_logic_vector(5 downto 0);   -- Function code from IF/ID
             next_PC       : out std_logic_vector(31 downto 0);  -- Next PC value to IF/ID
             write_data    : out std_logic_vector(31 downto 0);  -- Data to write back to IF/ID
-            Read_data     : out std_logic_vector(31 downto 0)   -- Data read from memory
+				-- Outputs for Testbench
+			   Branch_Address_tb		: out std_logic_vector(31 downto 0); -- The next address given a branch condition
+			   ALU_output_tb			: out std_logic_vector(31 downto 0); -- The output of the ALU
+			   Data_Memory_out_tb	: out std_logic_vector(31 downto 0); -- The output of the data memory
+			   PC_select_tb			: out std_logic							 -- The control bit that selects the branch address or PC+4
         );
     end component;
 
@@ -101,8 +119,12 @@ begin
             MemRead       => MemRead_int,     -- Not used in EX/MEM/WB
             MemWrite      => MemWrite_int,    -- To EX/MEM/WB
             MemtoReg      => MemtoReg_int,    -- To EX/MEM/WB
-            instruction   => open,            -- Left open (optional debugging)
-            instr_funct   => instr_funct_int  -- To EX/MEM/WB
+            instruction   => Instruction_out, -- For Testbench
+            instr_funct   => instr_funct_int, -- To EX/MEM/WB
+				-- Inputs and Outputs for the testbench
+				instr_input 	=> Instruction_input,  -- For Testbench
+				instr_wren  	=> Instruction_wren,   -- For Testbench
+				Write_Back_reg	=> Write_back_register -- For Testbench
         );
 
     -- Instantiate EX/MEM/WB Block
@@ -122,11 +144,17 @@ begin
             instr_funct   => instr_funct_int, -- From IF/ID
             next_PC       => next_PC_int,     -- Feedback to IF/ID
             write_data    => write_data_int,  -- Feedback to IF/ID
-            Read_data     => Read_data        -- To top-level output
+            -- Outputs for Testbench
+			   Branch_Address_tb	 => Branch_address,  -- For Testbench
+			   ALU_output_tb		 => ALU_output,		-- For Testbench
+			   Data_Memory_out_tb => Data_memory_out,	-- For Testbench
+			   PC_select_tb		 => PC_select			-- For Testbench
         );
-
-    -- Connect Top-Level Outputs
-    next_PC    <= next_PC_int;    -- Output next PC for verification
-    write_data <= write_data_int; -- Output write-back data for verification
+		  
+	-- Outputs for the Testbench
+	Read_data_1		 <= read_data_1_int;
+	Read_data_2		 <= read_data_2_int;
+	Sign_extend		 <= sign_ext_imm_int;
+	write_back_data <= write_data_int;
 
 end structural;

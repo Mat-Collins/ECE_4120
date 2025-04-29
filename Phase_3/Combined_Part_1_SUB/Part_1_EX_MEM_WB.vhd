@@ -30,7 +30,12 @@ entity Part_1_EX_MEM_WB is
         -- Outputs
         next_PC         : out std_logic_vector(31 downto 0); -- Next PC value (PC+4 or branch target)
         write_data      : out std_logic_vector(31 downto 0); -- Data to write back to register file
-        Read_data       : out std_logic_vector(31 downto 0)  -- Data read from memory for verification
+		  
+		  -- Outputs for Testbench
+		  Branch_Address_tb	: out std_logic_vector(31 downto 0); -- The next address given a branch condition
+		  ALU_output_tb		: out std_logic_vector(31 downto 0); -- The output of the ALU
+		  Data_Memory_out_tb	: out std_logic_vector(31 downto 0); -- The output of the data memory
+		  PC_select_tb			: out std_logic							 -- The control bit that selects the branch address or PC+4
     );
 end Part_1_EX_MEM_WB;
     
@@ -192,7 +197,10 @@ architecture structure of Part_1_EX_MEM_WB is
                 Output  => next_PC        -- To PC register
             );
         
-        -- Memory Read Data Output: For verification purposes
-        Read_data <= data_mem_out; -- Directly output memory read data
+        -- Outputs used for the testbench
+		  Branch_Address_tb	<= branch_address;
+		  ALU_output_tb		<= ALU_Output;
+		  Data_Memory_out_tb <= data_mem_out;
+		  PC_select_tb			<= branch_enable;
         
 end architecture;
