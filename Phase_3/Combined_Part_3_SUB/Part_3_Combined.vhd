@@ -10,7 +10,21 @@ use ieee.std_logic_1164.all;
 entity Part_3_Combined is
 	port(
 		clock	: in std_logic;		-- The clock signal
-		reset	: in std_logic			-- The reset signal
+		reset	: in std_logic;		-- The reset signal
+		
+		instr_input					: in std_logic_vector(31 downto 0);		-- The intruction to be saved to the instruction memory
+		instr_mem_wren				: in std_logic;								-- Write enable for the instruction memory
+		IF_ID_instruction			: out std_logic_vector(31 downto 0);	-- The instruction read from the memory in the IF stage
+		ID_EX_read_data_1			: out std_logic_vector(31 downto 0);	-- The data read from the RS register number
+		ID_EX_read_data_2			: out std_logic_vector(31 downto 0);	-- The data read from the RT register number
+		ID_EX_sign_extend			: out std_logic_vector(31 downto 0);	-- The sign extend value from the address
+		EX_MEM_branch_address	: out std_logic_vector(31 downto 0);	-- The address to branch to given a branch instruction
+		EX_MEM_ALU_output			: out std_logic_vector(31 downto 0);	-- The output from the ALU execution
+		MEM_WB_data_mem_out		: out std_logic_vector(31 downto 0);	-- The output from the data memory
+		MEM_PC_select				: out std_logic;								-- The output bit that selects the branch address
+		WB_write_back_data		: out std_logic_vector(31 downto 0);	-- The data to be writteen back to a register
+		WB_write_back_reg			: out std_logic_vector(4 downto 0);		-- The register number to write data back to
+		Forward_A, Forward_B		: out std_logic_vector(1 downto 0)
 	);
 end Part_3_Combined;
 
@@ -28,6 +42,9 @@ architecture structure of Part_3_Combined is
 			  -- Inputs from EX stage for hazard detection (load-use hazards)
 			  mem_read_ex    : in  std_logic;                              -- MemRead signal from ID/EX (indicates load in EX)
 			  write_reg_ex   : in  std_logic_vector(4 downto 0);           -- Destination register from ID/EX (for load in EX)
+			  -- Inputs for the testbench
+			  instr_data_input	 : in std_logic_vector(31 downto 0);		-- The data to be written to the instruction memory
+			  instr_mem_wren		 : in std_logic;									-- The write enable bit for the instruction memory
 			  -- Outputs to EX stage via ID/EX pipeline register
 			  ID_EX_PC_plus_4     : out std_logic_vector(31 downto 0);     -- PC+4 value passed to EX for branch calculations
 			  ID_EX_read_data1    : out std_logic_vector(31 downto 0);     -- rs read data for ALU operand 1 in EX
@@ -44,7 +61,9 @@ architecture structure of Part_3_Combined is
 			  ID_EX_MemWrite      : out std_logic;                         -- Memory write control signal for MEM stage
 			  ID_EX_MemtoReg      : out std_logic;                         -- Memory-to-register control signal for WB stage
 			  ID_EX_ALUOp         : out std_logic_vector(1 downto 0);      -- ALU operation control signal for EX stage
-			  ID_EX_reg_dst       : out std_logic                          -- RegDst signal to select between rt and rd for write address
+			  ID_EX_reg_dst       : out std_logic;                          -- RegDst signal to select between rt and rd for write address
+			  -- Outputs for Testbench
+			  IF_ID_instr_out	 : out std_logic_vector(31 downto 0)		-- Instruction fetched in the IF stage
 		);
 	end component;
 	
@@ -82,7 +101,12 @@ architecture structure of Part_3_Combined is
 				reg_write		: out std_logic;										-- Register write control bit to enable writing to a register
 				
 				ID_EX_mem_read_ex		: out std_logic;								-- The Memory Read Control bit in the EX stage to be used in Hazard Detection
-				ID_EX_rt_register_ex	: out std_logic_vector(4 downto 0)		-- The RT Reguster in the EX stage to bee used in hazard detection
+				ID_EX_rt_register_ex	: out std_logic_vector(4 downto 0);		-- The RT Register in the EX stage to bee used in hazard detection
+				
+				-- Outputs for Testbench
+				EX_MEM_ALU_output		: out std_logic_vector(31 downto 0);	-- The output of the ALU execution
+				MEM_WB_data_mem_out	: out std_logic_vector(31 downto 0); 	-- The output of the data memory
+				forward_a_out, forward_b_out		: out std_logic_vector(1 downto 0)
 		);
 	end component;
 	
@@ -124,6 +148,9 @@ architecture structure of Part_3_Combined is
 										  -- Inputs from EX stage for hazard detection (load-use hazards)
 										  mem_read_ex  			=> mem_read_ex_sig,
 										  write_reg_ex  			=> write_reg_ex_sig,
+										  -- Inputs for the testbench
+										  instr_data_input		=> instr_input,
+										  instr_mem_wren			=>	instr_mem_wren,
 										  -- Outputs to EX stage via ID/EX pipeline register
 										  ID_EX_PC_plus_4			=> PC_plus_4_sig,
 										  ID_EX_read_data1		=> read_data_1_sig,
@@ -139,7 +166,9 @@ architecture structure of Part_3_Combined is
 										  ID_EX_MemWrite  		=> MemWrite_sig,
 										  ID_EX_MemtoReg  		=> MemtoReg_sig,
 										  ID_EX_ALUOp    			=> ALUOp_sig,
-										  ID_EX_reg_dst			=> reg_dst_sig
+										  ID_EX_reg_dst			=> reg_dst_sig,
+										  -- Outputs for Testbench
+										  IF_ID_instr_out				=> IF_ID_Instruction
 									);
 									
 		EX_MEM_WB: Part_3_EX_MEM_WB port map(
@@ -171,6 +200,22 @@ architecture structure of Part_3_Combined is
 													reg_write				=> reg_write_sig,
 													
 													ID_EX_mem_read_ex		=> mem_read_ex_sig,
-													ID_EX_rt_register_ex => write_reg_ex_sig
+													ID_EX_rt_register_ex => write_reg_ex_sig,
+													
+													-- Outputs for Testbench
+													EX_MEM_ALU_output		=> EX_MEM_ALU_output,
+													MEM_WB_data_mem_out	=> MEM_WB_data_mem_out,
+													forward_a_out 			=> Forward_A,
+													forward_b_out			=> Forward_B
 									);
+									
+		-- Redirect some of the signals to the output for the testbench
+		ID_EX_read_data_1 		<= read_data_1_sig;		-- The data read from the RS register number
+		ID_EX_read_data_2			<= read_data_2_sig; 		-- The data read from the RT register number
+		ID_EX_sign_extend			<= sign_extended_sig;	-- The sign extend value from the address
+		EX_MEM_branch_address 	<= branch_address_sig;	-- The address to branch to given a branch instruction
+		MEM_PC_select 				<= pc_select_sig;			-- The output bit that selects the branch address
+		WB_write_back_data 		<= write_data_sig;		-- The data to be writteen back to a register
+		WB_write_back_reg 		<= write_register_sig;	-- The register number to write data back to
+		
 end architecture;

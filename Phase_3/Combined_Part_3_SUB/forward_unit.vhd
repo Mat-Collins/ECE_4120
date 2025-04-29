@@ -23,7 +23,9 @@ end forward_unit;
 architecture behavior of forward_unit is
 begin
 	
-	beh: process(EX_MEM_RegWrite, MEM_WB_RegWrite)
+	beh: process(ID_EX_rs_register,ID_EX_rt_register,
+					 EX_MEM_RegWrite, MEM_WB_RegWrite,
+					 EX_MEM_rd_register, MEM_WB_rd_register)
 	begin
 	
 		-- EX Forwarding - RS Register

@@ -22,7 +22,7 @@ end Four_Input_Mux;
 architecture behavior of Four_Input_Mux is
 	begin
 	
-	beh: process(Input0, Input1, Input2, Input3)
+	beh: process(Sel, Input0, Input1, Input2, Input3)
 	begin
 	
 		-- Case statement to select the desired input number and output it
@@ -31,6 +31,7 @@ architecture behavior of Four_Input_Mux is
 			when "01" => Output <= Input1;
 			when "10" => Output <= Input2;
 			when "11" => Output <= Input3;
+			when others => Output <= (others => '0');
 		end case;
 		
 	end process;

@@ -40,7 +40,12 @@ entity Part_3_EX_MEM_WB is
 		reg_write		: out std_logic;										-- Register write control bit to enable writing to a register
 		
 		ID_EX_mem_read_ex		: out std_logic;								-- The Memory Read Control bit in the EX stage to be used in Hazard Detection
-		ID_EX_rt_register_ex	: out std_logic_vector(4 downto 0)		-- The RT Reguster in the EX stage to bee used in hazard detection
+		ID_EX_rt_register_ex	: out std_logic_vector(4 downto 0);		-- The RT Reguster in the EX stage to bee used in hazard detection
+		
+		-- Outputs for Testbench
+		EX_MEM_ALU_output		: out std_logic_vector(31 downto 0);	-- The output of the ALU execution
+		MEM_WB_data_mem_out	: out std_logic_vector(31 downto 0);		-- The output of the data memory
+		forward_a_out, forward_b_out	: out std_logic_vector(1 downto 0) 
 	);
 end Part_3_EX_MEM_WB;
 
@@ -187,6 +192,10 @@ architecture structure of Part_3_EX_MEM_WB is
 													Forward_B				=> Forward_B
 												);
 												
+		-- ** DELETE **
+		forward_a_out <= Forward_A;
+		forward_b_out <= Forward_B;
+												
 		RS_reg_forward_mux:	Four_Input_Mux generic map(32)
 														port map(
 															Input0 	=>	read_data_1,
@@ -273,6 +282,7 @@ architecture structure of Part_3_EX_MEM_WB is
 											 
 		branch_address <= EX_MEM_reg_out(101 downto 70);
 		pc_select <= EX_MEM_reg_out(102) and EX_MEM_reg_out(69);	-- Branch AND ALU_Zero
+		EX_MEM_ALU_output <= EX_MEM_reg_out(68 downto 37);	-- ALU output for testbench
 		
 		data_memory: memory_1 port map(
 											address 	=> EX_MEM_reg_out(44 downto 37), -- ALU Output
@@ -300,6 +310,7 @@ architecture structure of Part_3_EX_MEM_WB is
 											 
 		reg_write <= MEM_WB_reg_out(69); -- RegWrite
 		write_register <= MEM_WB_reg_out(4 downto 0); -- Write Register
+		MEM_WB_data_mem_out <= MEM_WB_reg_out(68 downto 37);	-- Data memory output for testbench
 		
 		write_back_mux: Two_Input_Mux generic map(32)
 												port map(

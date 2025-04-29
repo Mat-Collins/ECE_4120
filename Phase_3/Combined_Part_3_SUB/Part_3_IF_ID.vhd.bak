@@ -24,9 +24,6 @@ entity Part_3_IF_ID is
         -- Inputs from EX stage for hazard detection (load-use hazards)
         mem_read_ex    : in  std_logic;                              -- MemRead signal from ID/EX (indicates load in EX)
         write_reg_ex   : in  std_logic_vector(4 downto 0);           -- Destination register from ID/EX (for load in EX)
-		  -- Inputs for the testbench
-		  instr_data_input	: in std_logic_vector(31 downto 0);			-- The data to be written to the instruction memory
-		  instr_mem_wren		: in std_logic;									-- The write enable bit for the instruction memory
         -- Outputs to EX stage via ID/EX pipeline register
         ID_EX_PC_plus_4     : out std_logic_vector(31 downto 0);     -- PC+4 value passed to EX for branch calculations
         ID_EX_read_data1    : out std_logic_vector(31 downto 0);     -- rs read data for ALU operand 1 in EX
@@ -43,10 +40,7 @@ entity Part_3_IF_ID is
         ID_EX_MemWrite      : out std_logic;                         -- Memory write control signal for MEM stage
         ID_EX_MemtoReg      : out std_logic;                         -- Memory-to-register control signal for WB stage
         ID_EX_ALUOp         : out std_logic_vector(1 downto 0);      -- ALU operation control signal for EX stage
-        ID_EX_reg_dst       : out std_logic;                         -- RegDst signal to select between rt and rd for write address
-		  
-		  -- Outputs for Testbench
-		  IF_ID_instr_out 	 : out std_logic_vector(31 downto 0)		-- Instruction fetched in the IF stage
+        ID_EX_reg_dst       : out std_logic                          -- RegDst signal to select between rt and rd for write address
     );
 end Part_3_IF_ID;
 
@@ -180,7 +174,7 @@ begin
     -- Instantiate Program Counter
     PC_inst : PC port map (
         Clock  => clk,          -- Clock signal drives PC updates
-        Resetn => reset,    -- Adapt active-high reset to active-low for component
+        Resetn => not reset,    -- Adapt active-high reset to active-low for component
         D      => pc_next,      -- Next PC value (stalled or selected)
         Q      => pc_current    -- Current PC value output
     );
@@ -196,8 +190,8 @@ begin
     instr_mem_inst : memory_1 port map (
         address => pc_current(7 downto 0), -- Lower 8 bits of PC for byte-addressable memory
         clock   => clk,                    -- Clock signal synchronizes memory access
-        data    => instr_data_input,		 -- The data input to be ised in the testbench
-        wren    => instr_mem_wren,			 -- The instruction memory write enable for the testbench
+        data    => (others => '0'),        -- Data input unused (read-only for IF)
+        wren    => '0',                    -- Write enable disabled for instruction fetch
         q       => instruction             -- Fetched 32-bit instruction
     );
 
@@ -343,8 +337,5 @@ begin
     ID_EX_MemtoReg       <= ID_EX_MemtoReg_reg;       -- MemtoReg signal to WB stage
     ID_EX_ALUOp          <= ID_EX_ALUOp_reg;          -- ALUOp signal to EX stage
     ID_EX_reg_dst        <= ID_EX_reg_dst_bit;        -- RegDst signal to EX stage for mux control
-	 
-	 -- Connect Outputs for the testbench
-	 IF_ID_instr_out <= IF_ID_instruction;				-- Instruction fetched in the IF stage
 
 end Behavioral;
