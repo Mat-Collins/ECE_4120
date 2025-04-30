@@ -1,6 +1,28 @@
+# Compile of ALU.vhd was successful.
+# Compile of ALU_Control.vhd was successful.
+# Compile of ALU_Mux.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of decoder.vhd was successful.
+# Compile of generic_adder.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of Part_2_Combined.vhd was successful.
+# Compile of Part_2_Combined_TB.vhd was successful with warnings.
+# Compile of Part_2_EX_MEM_WB.vhd was successful.
+# Compile of Part_2_IF_ID.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of pc_adder.vhd was successful.
+# Compile of reg_read_unit.vhd was successful.
+# Compile of reg_write_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of register_N.vhd was successful.
+# Compile of shift_left_by_2.vhd was successful.
+# Compile of SignExtend.vhd was successful.
+# Compile of Two_Input_Mux.vhd was successful.
+# Compile of type_def.vhd was successful.
+# 21 compiles, 0 failed with no errors.
 vsim -gui work.part_2_combined_tb
 # vsim -gui work.part_2_combined_tb 
-# Start time: 15:56:04 on Apr 29,2025
+# Start time: 22:35:35 on Apr 29,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -25,27 +47,200 @@ vsim -gui work.part_2_combined_tb
 # Loading work.decoder(behavior)
 # Loading work.register_n(behavioral)
 # Loading work.reg_read_unit(behavior)
+# Loading work.two_input_mux(behavioral)
 # Loading work.signextend(behavioral)
 # Loading work.part_2_ex_mem_wb(structure)
-# Loading work.two_input_mux(behavioral)
 # Loading work.alu_control(behavior)
 # Loading work.alu(behavioral)
 # Loading work.shift_left_by_2(behavior)
 # Loading work.generic_adder(behavioral)
-add wave -position end  sim:/part_2_combined_tb/clock
-add wave -position end  sim:/part_2_combined_tb/reset
-add wave -position end  sim:/part_2_combined_tb/Instruction_input
-add wave -position end  sim:/part_2_combined_tb/Instruction_wren
-add wave -position end  sim:/part_2_combined_tb/IF_ID_Instruction
-add wave -position end  sim:/part_2_combined_tb/ID_EX_Read_data_1
-add wave -position end  sim:/part_2_combined_tb/ID_EX_Read_data_2
-add wave -position end  sim:/part_2_combined_tb/ID_EX_Sign_extend
-add wave -position end  sim:/part_2_combined_tb/EX_MEM_Branch_address
-add wave -position end  sim:/part_2_combined_tb/EX_MEM_ALU_output
-add wave -position end  sim:/part_2_combined_tb/MEM_WB_Data_memory_out
-add wave -position end  sim:/part_2_combined_tb/WB_Write_back_data
-add wave -position end  sim:/part_2_combined_tb/WB_Write_back_register
-add wave -position end  sim:/part_2_combined_tb/MEM_PC_Select
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/ModelSim/wave.do
-# End time: 16:04:00 on Apr 29,2025, Elapsed time: 0:07:56
-# Errors: 0, Warnings: 1
+do C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_2_SUB/ModelSim/wave.do
+# Compile of ALU.vhd was successful.
+# Compile of ALU_Control.vhd was successful.
+# Compile of ALU_Mux.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of decoder.vhd was successful.
+# Compile of generic_adder.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of Part_2_Combined.vhd was successful.
+# Compile of Part_2_Combined_TB.vhd was successful with warnings.
+# Compile of Part_2_EX_MEM_WB.vhd was successful.
+# Compile of Part_2_IF_ID.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of pc_adder.vhd was successful.
+# Compile of reg_read_unit.vhd was successful.
+# Compile of reg_write_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of register_N.vhd was successful.
+# Compile of shift_left_by_2.vhd was successful.
+# Compile of SignExtend.vhd was successful.
+# Compile of Two_Input_Mux.vhd was successful.
+# Compile of type_def.vhd was successful.
+# 21 compiles, 0 failed with no errors.
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/write_unit/dec
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/adder_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.part_2_combined_tb(testbench)
+# Loading work.part_2_combined(structural)
+# Loading work.type_def
+# Loading work.part_2_if_id(behavioral)
+# Loading work.pc(behavioral)
+# Loading work.pc_adder(behavioral)
+# Loading work.memory_1(syn)
+# Loading work.alu_mux(behavioral)
+# Loading work.control_unit(behavioral)
+# Loading work.register_file(behavior)
+# Loading work.reg_write_unit(behavior)
+# Loading work.decoder(behavior)
+# Loading work.register_n(behavioral)
+# Loading work.reg_read_unit(behavior)
+# Loading work.two_input_mux(behavioral)
+# Loading work.signextend(behavioral)
+# Loading work.part_2_ex_mem_wb(structure)
+# Loading work.alu_control(behavior)
+# Loading work.alu(behavioral)
+# Loading work.shift_left_by_2(behavior)
+# Loading work.generic_adder(behavioral)
+# Compile of ALU.vhd was successful.
+# Compile of ALU_Control.vhd was successful.
+# Compile of ALU_Mux.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of decoder.vhd was successful.
+# Compile of generic_adder.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of Part_2_Combined.vhd was successful.
+# Compile of Part_2_Combined_TB.vhd was successful with warnings.
+# Compile of Part_2_EX_MEM_WB.vhd was successful.
+# Compile of Part_2_IF_ID.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of pc_adder.vhd was successful.
+# Compile of reg_read_unit.vhd was successful.
+# Compile of reg_write_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of register_N.vhd was successful.
+# Compile of shift_left_by_2.vhd was successful.
+# Compile of SignExtend.vhd was successful.
+# Compile of Two_Input_Mux.vhd was successful.
+# Compile of type_def.vhd was successful.
+# 21 compiles, 0 failed with no errors.
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/write_unit/dec
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/adder_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.part_2_combined_tb(testbench)
+# Loading work.part_2_combined(structural)
+# Loading work.type_def
+# Loading work.part_2_if_id(behavioral)
+# Loading work.pc(behavioral)
+# Loading work.pc_adder(behavioral)
+# Loading work.memory_1(syn)
+# Loading work.alu_mux(behavioral)
+# Loading work.control_unit(behavioral)
+# Loading work.register_file(behavior)
+# Loading work.reg_write_unit(behavior)
+# Loading work.decoder(behavior)
+# Loading work.register_n(behavioral)
+# Loading work.reg_read_unit(behavior)
+# Loading work.two_input_mux(behavioral)
+# Loading work.signextend(behavioral)
+# Loading work.part_2_ex_mem_wb(structure)
+# Loading work.alu_control(behavior)
+# Loading work.alu(behavioral)
+# Loading work.shift_left_by_2(behavior)
+# Loading work.generic_adder(behavioral)
+# Compile of ALU.vhd was successful.
+# Compile of ALU_Control.vhd was successful.
+# Compile of ALU_Mux.vhd was successful.
+# Compile of control_unit.vhd was successful.
+# Compile of decoder.vhd was successful.
+# Compile of generic_adder.vhd was successful.
+# Compile of memory_1.vhd was successful.
+# Compile of Part_2_Combined.vhd was successful.
+# Compile of Part_2_Combined_TB.vhd was successful with warnings.
+# Compile of Part_2_EX_MEM_WB.vhd was successful.
+# Compile of Part_2_IF_ID.vhd was successful.
+# Compile of PC.vhd was successful.
+# Compile of pc_adder.vhd was successful.
+# Compile of reg_read_unit.vhd was successful.
+# Compile of reg_write_unit.vhd was successful.
+# Compile of register_file.vhd was successful.
+# Compile of register_N.vhd was successful.
+# Compile of shift_left_by_2.vhd was successful.
+# Compile of SignExtend.vhd was successful.
+# Compile of Two_Input_Mux.vhd was successful.
+# Compile of type_def.vhd was successful.
+# 21 compiles, 0 failed with no errors.
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/write_unit/dec
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /part_2_combined_tb/DUT/IF_ID_inst/adder_inst
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /part_2_combined_tb/DUT/IF_ID_inst/register_file_inst/read_unit
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /part_2_combined_tb/DUT/EX_MEM_WB_inst/branch_adder
+# End time: 22:44:33 on Apr 29,2025, Elapsed time: 0:08:58
+# Errors: 0, Warnings: 13

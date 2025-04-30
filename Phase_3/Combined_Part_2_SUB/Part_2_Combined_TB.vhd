@@ -120,13 +120,6 @@ architecture testbench of Part_2_Combined_tb is
 			clock <= '1';
 			wait for 5ns;
 			
-			-- 4. Bubble
-			Instruction_input <= (others => '0');
-			clock <= '0';
-			wait for 5ns;
-			clock <= '1';
-			wait for 5ns;
-			
 			-- Test Instructions
 			
 			-- 5. beq $t1, $t2, Equal
