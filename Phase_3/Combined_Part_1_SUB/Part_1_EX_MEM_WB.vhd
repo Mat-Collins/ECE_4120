@@ -111,6 +111,7 @@ architecture structure of Part_1_EX_MEM_WB is
     
     -- Memory Signals
     signal data_mem_out  : std_logic_vector(31 downto 0); -- Data read from memory
+	 signal mem_write_bit : std_logic;
     
     -- Branch Signals
     signal address_offset: std_logic_vector(31 downto 0); -- Shifted branch offset

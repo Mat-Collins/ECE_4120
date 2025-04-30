@@ -25,6 +25,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity reg_read_unit
 -- Compiling architecture behavior of reg_read_unit
 
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_EX_MEM_WB.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_EX_MEM_WB.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Part_1_EX_MEM_WB
+-- Compiling architecture structure of Part_1_EX_MEM_WB
+
 } {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/SignExtend.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/SignExtend.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -41,14 +49,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package altera_mf_components
 -- Compiling entity memory_1
 -- Compiling architecture SYN of memory_1
-
-} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_EX_MEM_WB.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_EX_MEM_WB.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity Part_1_EX_MEM_WB
--- Compiling architecture structure of Part_1_EX_MEM_WB
 
 } {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_N.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_N.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -84,6 +84,15 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package std_logic_1164
 -- Compiling entity PC
 -- Compiling architecture behavioral of PC
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package type_def
+-- Compiling entity register_file
+-- Compiling architecture behavior of register_file
 
 } {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_TB.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_TB.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -133,6 +142,16 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 ** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_TB.vhd(233): (vcom-1207) An abstract literal and an identifier must have a separator between them.
 ** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_TB.vhd(235): (vcom-1207) An abstract literal and an identifier must have a separator between them.
 
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/generic_adder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/generic_adder.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity generic_adder
+-- Compiling architecture behavioral of generic_adder
+
 } {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_tb.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -181,24 +200,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 ** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_tb.vhd(233): (vcom-1207) An abstract literal and an identifier must have a separator between them.
 ** Warning: C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_tb.vhd(235): (vcom-1207) An abstract literal and an identifier must have a separator between them.
 
-} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package type_def
--- Compiling entity register_file
--- Compiling architecture behavior of register_file
-
-} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/generic_adder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/generic_adder.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Compiling entity generic_adder
--- Compiling architecture behavioral of generic_adder
+-- Compiling entity reg_write_unit
+-- Compiling architecture behavior of reg_write_unit
 
 } {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -208,15 +217,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package type_def
 -- Compiling entity Part_1_Combined
 -- Compiling architecture structural of Part_1_Combined
-
-} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package type_def
--- Compiling entity reg_write_unit
--- Compiling architecture behavior of reg_write_unit
 
 } {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/control_unit.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/control_unit.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -234,14 +234,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity Part_1_IF_ID
 -- Compiling architecture structural of Part_1_IF_ID
 
-} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Control.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Control.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity ALU_Control
--- Compiling architecture behavior of ALU_Control
-
 } {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Two_Input_Mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Two_Input_Mux.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -250,13 +242,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity Two_Input_Mux
 -- Compiling architecture Behavioral of Two_Input_Mux
 
-} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Mux.vhd
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Control.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Control.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity ALU_Mux
--- Compiling architecture Behavioral of ALU_Mux
+-- Compiling entity ALU_Control
+-- Compiling architecture behavior of ALU_Control
 
 } {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/shift_left_by_2.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/shift_left_by_2.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -265,5 +257,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package std_logic_1164
 -- Compiling entity shift_left_by_2
 -- Compiling architecture behavior of shift_left_by_2
+
+} {} {}} C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Mux.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Mux.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ALU_Mux
+-- Compiling architecture Behavioral of ALU_Mux
 
 } {} {}}
