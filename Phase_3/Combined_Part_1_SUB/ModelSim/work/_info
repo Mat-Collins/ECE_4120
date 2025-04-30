@@ -10,11 +10,11 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 Ealu
-Z0 w1745979840
+Z0 w1746026458
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 142
+!i122 205
 Z4 dC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ModelSim
 Z5 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU.vhd
 Z6 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU.vhd
@@ -24,9 +24,9 @@ Vfnl^O3k?FM`<Ti1ejb4il3
 !s100 zc_O;EA5SGDMMPd@U>>BR3
 Z8 OV;C;2020.1;71
 32
-Z9 !s110 1745983633
+Z9 !s110 1746026932
 !i10b 1
-Z10 !s108 1745983633.000000
+Z10 !s108 1746026932.000000
 Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU.vhd|
 Z12 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU.vhd|
 !i113 1
@@ -37,7 +37,7 @@ R1
 R2
 R3
 DEx4 work 3 alu 0 22 fnl^O3k?FM`<Ti1ejb4il3
-!i122 142
+!i122 205
 l20
 L19 34
 Vng3Pa]Th?zVX4@:Q?8m?O2
@@ -56,7 +56,7 @@ Ealu_control
 R0
 R2
 R3
-!i122 143
+!i122 206
 R4
 Z15 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Control.vhd
 Z16 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Control.vhd
@@ -78,7 +78,7 @@ Abehavior
 R2
 R3
 DEx4 work 11 alu_control 0 22 kLg29OmJ`;JA;zgUIHSDj1
-!i122 143
+!i122 206
 l19
 L18 45
 VQh><CiVO^K;e5fzn`bD@l2
@@ -97,7 +97,7 @@ Ealu_mux
 R0
 R2
 R3
-!i122 144
+!i122 207
 R4
 Z19 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Mux.vhd
 Z20 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/ALU_Mux.vhd
@@ -119,7 +119,7 @@ Abehavioral
 R2
 R3
 DEx4 work 7 alu_mux 0 22 78k?FL=l]jz`_UBg@>DQO3
-!i122 144
+!i122 207
 l19
 L18 5
 VB517dX9<zd6@UJoT:gV940
@@ -138,7 +138,7 @@ Econtrol_unit
 R0
 R2
 R3
-!i122 145
+!i122 208
 R4
 Z23 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/control_unit.vhd
 Z24 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/control_unit.vhd
@@ -160,7 +160,7 @@ Abehavioral
 R2
 R3
 DEx4 work 12 control_unit 0 22 P[@4R`IORG77KH^=IS=z81
-!i122 145
+!i122 208
 l19
 L18 62
 VcB:;W_67NV;_B[mjdXP=L3
@@ -181,7 +181,7 @@ Z27 DPx4 work 8 type_def 0 22 5QMboEn:S;A5Oj1biLdCP0
 R1
 R2
 R3
-!i122 146
+!i122 209
 R4
 Z28 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/decoder.vhd
 Z29 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/decoder.vhd
@@ -205,7 +205,7 @@ R1
 R2
 R3
 DEx4 work 7 decoder 0 22 L0CT:_6IUO`<43ihd;9DN3
-!i122 146
+!i122 209
 l22
 L21 20
 VcZL:^@FJA6@V7Ugcl?;SY1
@@ -226,7 +226,7 @@ Z33 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z34 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 R2
 R3
-!i122 147
+!i122 210
 R4
 Z35 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/generic_adder.vhd
 Z36 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/generic_adder.vhd
@@ -250,7 +250,7 @@ R34
 R2
 R3
 DEx4 work 13 generic_adder 0 22 VMAf0z>D1KDN]_2_=2<Y41
-!i122 147
+!i122 210
 l20
 L19 4
 VJ6JdjB8<OLD7Kfc>hoJdL0
@@ -270,7 +270,7 @@ R0
 Z40 DPx9 altera_mf 20 altera_mf_components 0 22 BN6nPmY:UEbXa[^5b@FTW1
 R2
 R3
-!i122 148
+!i122 211
 R4
 Z41 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/memory_1.vhd
 Z42 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/memory_1.vhd
@@ -293,7 +293,7 @@ R40
 R2
 R3
 DEx4 work 8 memory_1 0 22 6JjH2V:Wc8<7M?J5R[gLT3
-!i122 148
+!i122 211
 l59
 L55 35
 V@WkU5Dhd43Xjf@dTeYVNb0
@@ -313,7 +313,7 @@ R0
 R27
 R2
 R3
-!i122 149
+!i122 212
 R4
 Z45 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined.vhd
 Z46 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined.vhd
@@ -336,7 +336,7 @@ R27
 R2
 R3
 DEx4 work 15 part_1_combined 0 22 lQJ>2?Ki^zJHO1K6Lhhf60
-!i122 149
+!i122 212
 l104
 L35 126
 V54blo87^LiHzO^3d>SK323
@@ -355,7 +355,7 @@ Epart_1_combined_tb
 R0
 R2
 R3
-!i122 150
+!i122 213
 R4
 Z49 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_TB.vhd
 Z50 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_TB.vhd
@@ -365,11 +365,11 @@ V56IIBeS<RX9WSMmW?PfcE3
 !s100 l3CmAUUSV^<?R0Wgc7ZDB0
 R8
 32
-Z51 !s110 1745983634
+Z51 !s110 1746026933
 !i10b 1
-R10
-Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_TB.vhd|
-Z53 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_TB.vhd|
+Z52 !s108 1746026933.000000
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_TB.vhd|
+Z54 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_Combined_TB.vhd|
 !i113 1
 R13
 R14
@@ -377,7 +377,7 @@ Atestbench
 R2
 R3
 DEx4 work 18 part_1_combined_tb 0 22 56IIBeS<RX9WSMmW?PfcE3
-!i122 150
+!i122 213
 l51
 L12 229
 V<mnSU;6<PRMiJX@A[MeCa1
@@ -386,17 +386,17 @@ R8
 32
 R51
 !i10b 1
-R10
 R52
 R53
+R54
 !i113 1
 R13
 R14
 Epart_1_ex_mem_wb
-Z54 w1745981347
+R0
 R2
 R3
-!i122 151
+!i122 214
 R4
 Z55 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_EX_MEM_WB.vhd
 Z56 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_EX_MEM_WB.vhd
@@ -408,9 +408,9 @@ R8
 32
 R51
 !i10b 1
-Z57 !s108 1745983634.000000
-Z58 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_EX_MEM_WB.vhd|
-Z59 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_EX_MEM_WB.vhd|
+R52
+Z57 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_EX_MEM_WB.vhd|
+Z58 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_EX_MEM_WB.vhd|
 !i113 1
 R13
 R14
@@ -418,7 +418,7 @@ Astructure
 R2
 R3
 DEx4 work 16 part_1_ex_mem_wb 0 22 JB2zD@bhQhj1]0fh17@AC3
-!i122 151
+!i122 214
 l121
 L42 166
 VU2ScHoUAc4=amTD[4zIj>2
@@ -427,31 +427,31 @@ R8
 32
 R51
 !i10b 1
+R52
 R57
 R58
-R59
 !i113 1
 R13
 R14
 Epart_1_if_id
-Z60 w1745980450
+R0
 R2
 R3
-!i122 152
+!i122 215
 R4
-Z61 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_IF_ID.vhd
-Z62 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_IF_ID.vhd
+Z59 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_IF_ID.vhd
+Z60 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_IF_ID.vhd
 l0
-Z63 L12 1
+Z61 L12 1
 VD0f<U6Mb6zSo7PT9BID=Z0
 !s100 <^Jj453EU3XD1KGLHc5Y50
 R8
 32
 R51
 !i10b 1
-R57
-Z64 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_IF_ID.vhd|
-Z65 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_IF_ID.vhd|
+R52
+Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_IF_ID.vhd|
+Z63 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Part_1_IF_ID.vhd|
 !i113 1
 R13
 R14
@@ -459,7 +459,7 @@ Astructural
 R2
 R3
 DEx4 work 12 part_1_if_id 0 22 D0f<U6Mb6zSo7PT9BID=Z0
-!i122 152
+!i122 215
 l113
 L41 142
 VVnWBi;R0hMJG^aUkN]CCY2
@@ -468,9 +468,9 @@ R8
 32
 R51
 !i10b 1
-R57
-R64
-R65
+R52
+R62
+R63
 !i113 1
 R13
 R14
@@ -478,10 +478,10 @@ Epc
 R0
 R2
 R3
-!i122 153
+!i122 216
 R4
-Z66 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/PC.vhd
-Z67 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/PC.vhd
+Z64 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/PC.vhd
+Z65 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/PC.vhd
 l0
 R7
 V:X0R9>k;zK6d@ckbLA3?80
@@ -490,9 +490,9 @@ R8
 32
 R51
 !i10b 1
-R57
-Z68 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/PC.vhd|
-Z69 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/PC.vhd|
+R52
+Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/PC.vhd|
+Z67 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/PC.vhd|
 !i113 1
 R13
 R14
@@ -500,7 +500,7 @@ Abehavioral
 R2
 R3
 DEx4 work 2 pc 0 22 :X0R9>k;zK6d@ckbLA3?80
-!i122 153
+!i122 216
 l21
 L19 14
 VaHI;nO_m=@l@6aQNjGDNI3
@@ -509,9 +509,9 @@ R8
 32
 R51
 !i10b 1
-R57
-R68
-R69
+R52
+R66
+R67
 !i113 1
 R13
 R14
@@ -521,10 +521,10 @@ R33
 R34
 R2
 R3
-!i122 154
+!i122 217
 R4
-Z70 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/pc_adder.vhd
-Z71 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/pc_adder.vhd
+Z68 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/pc_adder.vhd
+Z69 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/pc_adder.vhd
 l0
 R7
 V][BI[MH6d_j;RJ?]nD5FF2
@@ -533,9 +533,9 @@ R8
 32
 R51
 !i10b 1
-R57
-Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/pc_adder.vhd|
-Z73 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/pc_adder.vhd|
+R52
+Z70 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/pc_adder.vhd|
+Z71 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/pc_adder.vhd|
 !i113 1
 R13
 R14
@@ -545,7 +545,7 @@ R34
 R2
 R3
 DEx4 work 8 pc_adder 0 22 ][BI[MH6d_j;RJ?]nD5FF2
-!i122 154
+!i122 217
 l19
 L18 4
 V18b?=3hW;2?cSUW2BP4@o0
@@ -554,9 +554,9 @@ R8
 32
 R51
 !i10b 1
-R57
-R72
-R73
+R52
+R70
+R71
 !i113 1
 R13
 R14
@@ -566,10 +566,10 @@ R27
 R1
 R2
 R3
-!i122 155
+!i122 218
 R4
-Z74 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_read_unit.vhd
-Z75 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_read_unit.vhd
+Z72 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_read_unit.vhd
+Z73 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_read_unit.vhd
 l0
 R30
 VEE=9D3?XaBgigRanhnY880
@@ -578,9 +578,9 @@ R8
 32
 R51
 !i10b 1
-R57
-Z76 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_read_unit.vhd|
-Z77 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_read_unit.vhd|
+R52
+Z74 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_read_unit.vhd|
+Z75 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_read_unit.vhd|
 !i113 1
 R13
 R14
@@ -590,7 +590,7 @@ R1
 R2
 R3
 DEx4 work 13 reg_read_unit 0 22 EE=9D3?XaBgigRanhnY880
-!i122 155
+!i122 218
 l27
 L25 21
 Vh:zGo_9L_BO_>]Roaf<6^2
@@ -599,9 +599,9 @@ R8
 32
 R51
 !i10b 1
-R57
-R76
-R77
+R52
+R74
+R75
 !i113 1
 R13
 R14
@@ -610,10 +610,10 @@ R0
 R27
 R2
 R3
-!i122 156
+!i122 219
 R4
-Z78 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd
-Z79 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd
+Z76 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd
+Z77 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd
 l0
 L13 1
 Vbfndz7>0NBD_[]ZiDP8j41
@@ -622,9 +622,9 @@ R8
 32
 R51
 !i10b 1
-R57
-Z80 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd|
-Z81 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd|
+R52
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd|
+Z79 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/reg_write_unit.vhd|
 !i113 1
 R13
 R14
@@ -633,7 +633,7 @@ R27
 R2
 R3
 DEx4 work 14 reg_write_unit 0 22 bfndz7>0NBD_[]ZiDP8j41
-!i122 156
+!i122 219
 l51
 L25 50
 VB]O22Xle57SQ6F3cF6I7n2
@@ -642,32 +642,32 @@ R8
 32
 R51
 !i10b 1
-R57
-R80
-R81
+R52
+R78
+R79
 !i113 1
 R13
 R14
 Eregister_file
-Z82 w1745983488
+Z80 w1746026830
 R27
 R2
 R3
-!i122 157
+!i122 220
 R4
-Z83 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd
-Z84 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd
+Z81 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd
+Z82 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd
 l0
-R63
+R61
 V1DICYB[J[VeKEn`L3H6zR2
 !s100 =n;M`9GKoG95377`=@lVD0
 R8
 32
 R51
 !i10b 1
-R57
-Z85 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd|
-Z86 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd|
+R52
+Z83 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd|
+Z84 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_file.vhd|
 !i113 1
 R13
 R14
@@ -676,18 +676,18 @@ R27
 R2
 R3
 DEx4 work 13 register_file 0 22 1DICYB[J[VeKEn`L3H6zR2
-!i122 157
-l70
-L27 108
-VhA6ejbLz5[i;dObDUcoOi1
-!s100 L2=OEmh8`zb7F5moM;ohi0
+!i122 220
+l61
+L27 59
+V<i;4GX1=j_2U?zJLz3=b]2
+!s100 YlJG1bNPEN^OUOYCAJG<03
 R8
 32
 R51
 !i10b 1
-R57
-R85
-R86
+R52
+R83
+R84
 !i113 1
 R13
 R14
@@ -695,10 +695,10 @@ Eregister_n
 R0
 R2
 R3
-!i122 158
+!i122 221
 R4
-Z87 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_N.vhd
-Z88 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_N.vhd
+Z85 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_N.vhd
+Z86 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_N.vhd
 l0
 R7
 VH2NEL2jOVbB>i`:VZlEl23
@@ -707,9 +707,9 @@ R8
 32
 R51
 !i10b 1
-R57
-Z89 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_N.vhd|
-Z90 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_N.vhd|
+R52
+Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_N.vhd|
+Z88 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/register_N.vhd|
 !i113 1
 R13
 R14
@@ -717,7 +717,7 @@ Abehavioral
 R2
 R3
 DEx4 work 10 register_n 0 22 H2NEL2jOVbB>i`:VZlEl23
-!i122 158
+!i122 221
 l24
 L21 16
 V7V72F<[T@VO9UUam`cHaO0
@@ -726,9 +726,9 @@ R8
 32
 R51
 !i10b 1
-R57
-R89
-R90
+R52
+R87
+R88
 !i113 1
 R13
 R14
@@ -736,10 +736,10 @@ Eshift_left_by_2
 R0
 R2
 R3
-!i122 159
+!i122 222
 R4
-Z91 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/shift_left_by_2.vhd
-Z92 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/shift_left_by_2.vhd
+Z89 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/shift_left_by_2.vhd
+Z90 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/shift_left_by_2.vhd
 l0
 R7
 VCjH7<JiCITQPVV:[@Kae=2
@@ -748,9 +748,9 @@ R8
 32
 R51
 !i10b 1
-R57
-Z93 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/shift_left_by_2.vhd|
-Z94 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/shift_left_by_2.vhd|
+R52
+Z91 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/shift_left_by_2.vhd|
+Z92 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/shift_left_by_2.vhd|
 !i113 1
 R13
 R14
@@ -758,7 +758,7 @@ Abehavior
 R2
 R3
 DEx4 work 15 shift_left_by_2 0 22 CjH7<JiCITQPVV:[@Kae=2
-!i122 159
+!i122 222
 l19
 L18 7
 VOL0^@kB:P:Dcgf7m^;4^53
@@ -767,9 +767,9 @@ R8
 32
 R51
 !i10b 1
-R57
-R93
-R94
+R52
+R91
+R92
 !i113 1
 R13
 R14
@@ -777,10 +777,10 @@ Esignextend
 R0
 R2
 R3
-!i122 160
+!i122 223
 R4
-Z95 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/SignExtend.vhd
-Z96 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/SignExtend.vhd
+Z93 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/SignExtend.vhd
+Z94 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/SignExtend.vhd
 l0
 R7
 VJgSG]>bNV[ND:4[362N]30
@@ -789,9 +789,9 @@ R8
 32
 R51
 !i10b 1
-R57
-Z97 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/SignExtend.vhd|
-Z98 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/SignExtend.vhd|
+R52
+Z95 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/SignExtend.vhd|
+Z96 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/SignExtend.vhd|
 !i113 1
 R13
 R14
@@ -799,7 +799,7 @@ Abehavioral
 R2
 R3
 DEx4 work 10 signextend 0 22 JgSG]>bNV[ND:4[362N]30
-!i122 160
+!i122 223
 l18
 L17 5
 V4mZILUBd?zXj_g]ZXGccc1
@@ -808,9 +808,9 @@ R8
 32
 R51
 !i10b 1
-R57
-R97
-R98
+R52
+R95
+R96
 !i113 1
 R13
 R14
@@ -818,21 +818,21 @@ Etwo_input_mux
 R0
 R2
 R3
-!i122 161
+!i122 224
 R4
-Z99 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Two_Input_Mux.vhd
-Z100 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Two_Input_Mux.vhd
+Z97 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Two_Input_Mux.vhd
+Z98 FC:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Two_Input_Mux.vhd
 l0
 R37
 VPLAE=Ab`a9JUo_[nla1[:3
 !s100 BHfzAiR>E13N`W]@Y>OOQ1
 R8
 32
-R51
+Z99 !s110 1746026934
 !i10b 1
-R57
-Z101 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Two_Input_Mux.vhd|
-Z102 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Two_Input_Mux.vhd|
+R52
+Z100 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Two_Input_Mux.vhd|
+Z101 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/Two_Input_Mux.vhd|
 !i113 1
 R13
 R14
@@ -840,25 +840,25 @@ Abehavioral
 R2
 R3
 DEx4 work 13 two_input_mux 0 22 PLAE=Ab`a9JUo_[nla1[:3
-!i122 161
+!i122 224
 l21
 L20 5
 VLMMITCF3`;Uf6QhZJQUm^2
 !s100 k@j0eg:^2N[4G2Hj7F0T[1
 R8
 32
-R51
+R99
 !i10b 1
-R57
+R52
+R100
 R101
-R102
 !i113 1
 R13
 R14
 Ptype_def
 R2
 R3
-!i122 162
+!i122 225
 R0
 R4
 8C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/type_def.vhd
@@ -869,9 +869,9 @@ V5QMboEn:S;A5Oj1biLdCP0
 !s100 5@dXE=X?jC3D[ZE;zT_YU1
 R8
 32
-!s110 1745983635
+R99
 !i10b 1
-R57
+!s108 1746026934.000000
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/type_def.vhd|
 !s107 C:/Users/mattj/Documents/GitHub/ECE_4120/Phase_3/Combined_Part_1_SUB/type_def.vhd|
 !i113 1
