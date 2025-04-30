@@ -1,5 +1,5 @@
 -- Design Phase 2
--- Date: 4/11/2025
+-- Date: 4/29/2025
 -- Authors: Matthew Collins & Lewis Bates
 -- Emails: mcollins42@tntech.edu & lfbates42@tntech.edu
 
@@ -48,13 +48,29 @@ ARCHITECTURE behavior OF register_file IS
 				read_data_1		: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);	-- Values stored in read register 1
 				read_data_2		: OUT STD_LOGIC_VECTOR(31 DOWNTO 0)		-- Values stored in read register 2
 			);
-		END COMPONENT;
+	END COMPONENT;
+		
+	COMPONENT Two_Input_Mux IS
+		GENERIC(n : INTEGER := 32); 
+		 PORT (
+			  Input0, Input1 : IN  std_logic_vector(n-1 DOWNTO 0);  -- Two (n-1)-bit inputs
+			  Sel            : IN  std_logic;                       -- 1-bit select signal
+			  Output         : OUT std_logic_vector(n-1 DOWNTO 0)   -- (n-1)-bit output
+		 );
+	END COMPONENT;
 	
 	
 	-- Internal Signals
-	SIGNAL read_unit_in 		: REG_ARRAY(LEN-1 DOWNTO 0);	-- Stored register values
+	SIGNAL read_unit_in 		: REG_ARRAY(LEN-1 DOWNTO 0);		-- Stored register values
+	SIGNAL read_data_1_sig	: STD_LOGIC_VECTOR(31 DOWNTO 0);	-- The value of read register 1 that is stored
+	SIGNAL read_data_2_sig	: STD_LOGIC_VECTOR(31 DOWNTO 0);	-- The value of read register 2 that is stored
+	SIGNAL Forward_1			: STD_LOGIC;							-- The select bit for forwarding read data 1
+	SIGNAL Forward_2			: STD_LOGIC;							-- The select bit for forwarding read data 2
 	
 BEGIN
+
+
+	
 
 	write_unit: reg_write_unit GENERIC MAP (32)
 										PORT MAP (
@@ -68,11 +84,51 @@ BEGIN
 									
 	read_unit: reg_read_unit GENERIC MAP (32)
 									 PORT MAP (
-										read_reg_1		=> read_reg_1,			-- Read register 1 selection
-										read_reg_2		=> read_reg_2,			-- Read register 2 selection
-										reg_values		=> read_unit_in,		-- The stored register values fed from write_unit
-										read_data_1		=> read_data_1,		-- The value stored in read register 1
-										read_data_2		=> read_data_2			-- The value stored in read register 2
+										read_reg_1		=> read_reg_1,				-- Read register 1 selection
+										read_reg_2		=> read_reg_2,				-- Read register 2 selection
+										reg_values		=> read_unit_in,			-- The stored register values fed from write_unit
+										read_data_1		=> read_data_1_sig,		-- The value stored in read register 1
+										read_data_2		=> read_data_2_sig		-- The value stored in read register 2
 									 );
+									 
+	Write_data_forward_1: Two_Input_Mux GENERIC MAP(32)
+													PORT MAP (
+														Input0 	=> read_data_1_sig,
+														Input1 	=> write_data,
+														Sel	 	=> Forward_1,
+														Output	=> read_data_1
+													);
+													
+	Write_data_forward_2: Two_Input_Mux GENERIC MAP(32)
+													PORT MAP (
+														Input0 	=> read_data_2_sig,
+														Input1 	=> write_data,
+														Sel	 	=> Forward_2,
+														Output	=> read_data_2
+													);
+		
+
+	-- Register File Forwarding Unit
+	PROCESS(read_reg_1, read_reg_2, write_reg, regwrite_bit)
+	BEGIN
+	
+		-- Read Register 1 Forwarding
+		IF (regwrite_bit = '1')
+		AND NOT(write_reg = "00000")
+		AND (write_reg = read_reg_1) THEN
+			Forward_1 <= '1';
+		ELSE
+			Forward_1 <= '0';
+		END IF;
+		
+		-- Read Register 2 Forwarding
+		IF (regwrite_bit = '1')
+		AND NOT(write_reg = "00000")
+		AND (write_reg = read_reg_2) THEN
+			Forward_2 <= '1';
+		ELSE
+			Forward_2 <= '0';
+		END IF;
+	END PROCESS;
 									 
 END ARCHITECTURE;

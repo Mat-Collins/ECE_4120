@@ -98,15 +98,15 @@ architecture testbench of Part_3_Combined_tb is
 			
 			-- Set up Instructions
 			
-			-- 1. addi $t2, $zero, 2
-			instr_input <= "00100000000010100000000000000010";
+			-- 1. addi $t1, $zero, 1
+			instr_input <= "00100000000010010000000000000001";
 			clock <= '0';
 			wait for 5ns;
 			clock <= '1';
 			wait for 5ns;
 			
-			-- 2. addi $t1, $zero, 1
-			instr_input <= "00100000000010010000000000000001";
+			-- 2. addi $t2, $zero, 2
+			instr_input <= "00100000000010100000000000000010";
 			clock <= '0';
 			wait for 5ns;
 			clock <= '1';
