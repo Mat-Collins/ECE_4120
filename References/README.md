@@ -1,6 +1,6 @@
 # References
 
-The references used for the project include the images below as well as the listed NandLand website. The original sources of the images may not be known for certain.
+The references used for the project include the images below as well as the listed NandLand website. The original sources of the images are or may not be known for certain.
 
 [1] Screenshot of code below. Date Accessed: approx. April 5, 2025 [4]
 
