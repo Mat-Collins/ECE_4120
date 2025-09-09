@@ -8,7 +8,7 @@ The references used for the project include the images below as well as the list
 
 [2] NandLand. Arrays – VHDL Example: Create your own types using arrays. Accessed at: https://nandland.com/arrays/. Date Accessed: approx. April 5, 2025.
 
-[3] Image from Documentation used to reference the correct chip for the Altera MAX 10 Board. Date Accessed: approx. April 7, 2025. [4]
+[3] Image from Documentation used to reference the correct configuration for the Altera MAX 10 Board. Date Accessed: approx. April 7, 2025. [4]
 
 ![image](IMG_20250908_202124.jpg)
 
